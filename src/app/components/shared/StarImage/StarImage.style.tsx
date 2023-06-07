@@ -17,19 +17,20 @@ const Container = styled.div`
       }
     }
     &--dots_img {
-      bottom: 15px;
-      right: 15px;
+      bottom: -10px;
+      right: -20px;
     }
     &--r_star_img {
       top: 20px;
-      right: 50px;
+      right: 20px;
     }
     &--l_star_img {
-      left: 0;
+      left: -20px;
       bottom: 150px;
     }
 
     &--main_img {
+      border-radius: 8px;
       @media ${StyledTheme.media.laptop} {
         width: 100%;
         height: auto;

@@ -24,6 +24,30 @@ const Container = styled.div`
         margin-bottom: 20px;
       }
     }
+    &--video {
+      background-image: linear-gradient(#271717 40%, #5a0f00, #d02100);
+      width: 90vw;
+      height: 600px;
+      padding: 24px 86px;
+      background-color: red;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @media ${StyledTheme.media.laptop} {
+        height: 300px;
+        width: 90vw;
+        padding: 24px 16px;
+      }
+      .youtube {
+        width: 100%;
+        height: 100%;
+        box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+        border-radius: 8px;
+        @media ${StyledTheme.media.laptop} {
+          width: 90%;
+        }
+      }
+    }
   }
 `;
 

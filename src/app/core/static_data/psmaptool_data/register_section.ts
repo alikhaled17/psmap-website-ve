@@ -1,8 +1,6 @@
-export const SignUpStrings: any = {
+export const RegisterStrings: any = {
   en: {
-    title: `Don't Let Your Business Suffer from <br /> Ineffective Problem-Solving Methods`,
-    desc: `Sign up today to learn more about how PSMap's RCA tool and training can help <br /> you uncover the root causes of problems and implement lasting solutions.`,
-    subtitle: `Let’s help you unlock your full potential`,
+    title: `Please provide us with your information below, and our team will respond with pricing plans and further details within 3-5 business days.`,
     form: {
       name: "Full Name",
       email: "Email",
@@ -18,9 +16,7 @@ export const SignUpStrings: any = {
     },
   },
   ar: {
-    title: `لا تدع عملك يعاني من طرق حل المشكلات غير الفعالة`,
-    desc: `اشترك اليوم لمعرفة المزيد حول كيف يمكن لأداة PSMap's RCA والتدريب أن تساعدك في الكشف عن الأسباب الجذرية للمشكلات وتنفيذ حلول دائمة.`,
-    subtitle: `دعنا نساعدك في إطلاق العنان لإمكانياتك الكاملة`,
+    title: `يرجى تزويدنا بمعلوماتك أدناه ، وسيقوم فريقنا بالرد بخطط التسعير ومزيد من التفاصيل في غضون 3-5 أيام عمل.`,
     form: {
       name: "الاسم الكامل",
       email: "البريد الإلكتروني للشركة ",

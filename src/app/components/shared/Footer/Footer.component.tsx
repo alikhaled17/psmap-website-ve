@@ -3,6 +3,7 @@ import Container from "./Footer.style";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import psmapLogo from "@/app/assets/images/global/logo-lg-white.svg";
+import Gmail from "@/app/assets/images/global/footer_gmail.svg";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import Link from "next/link";
@@ -34,17 +35,33 @@ const Footer = () => {
               <div className="content--icons">
                 <p className="primary_text">Follow us on</p>
                 <div className="content--icons_list">
-                  <Link href="" className="social_icon">
-                    <GoogleIcon />
+                  <Link
+                    href="https://network.psmap.io/"
+                    target="blank"
+                    className="social_icon"
+                  >
+                    <Image src={Gmail} alt="community" />
                   </Link>
-                  <Link href="" className="social_icon">
+                  <Link
+                    href="https://www.linkedin.com/company/psmap/"
+                    target="blank"
+                    className="social_icon"
+                  >
                     <LinkedInIcon />
                   </Link>
-                  <Link href="" className="social_icon">
+                  <Link
+                    href="https://twitter.com/PSMap_"
+                    target="blank"
+                    className="social_icon"
+                  >
                     <TwitterIcon />
                   </Link>
-                  <Link href="" className="social_icon">
-                    <Youtube />
+                  <Link
+                    href="https://www.youtube.com/@psmap"
+                    target="blank"
+                    className="social_icon"
+                  >
+                    <Youtube variant="Bold" />
                   </Link>
                 </div>
               </div>
@@ -52,12 +69,12 @@ const Footer = () => {
             <div className="links">
               <span className="primary_text links--label">Company</span>
               <span className="primary_text">
-                <Link href="" className="links--route">
+                <Link href="/" className="links--route">
                   Home
                 </Link>
               </span>
               <span className="primary_text">
-                <Link href="" className="links--route">
+                <Link href="PSMapTool" className="links--route">
                   PSMap Tool
                 </Link>
               </span>
@@ -99,10 +116,10 @@ const Footer = () => {
                 <Sms variant="Bold" />
                 <small>Info@psmap.io</small>
               </span>
-              <span className="primary_text contacts--item">
+              {/* <span className="primary_text contacts--item">
                 <Whatsapp variant="Bold" />
                 <small>+966500928211</small>
-              </span>
+              </span> */}
             </div>
           </div>
           <div className="footer--tail">

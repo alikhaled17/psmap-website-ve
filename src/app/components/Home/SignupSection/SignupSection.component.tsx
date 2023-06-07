@@ -41,7 +41,7 @@ const SignupSection = () => {
               __html: t("sign_up").subtitle,
             }}
           ></p>
-          <Form />
+          <Form data={t("sign_up").form} />
         </motion.div>
       </div>
     </Container>

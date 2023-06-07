@@ -3,6 +3,7 @@ export const StyledTheme = {
   border_radius: "5px",
   colors: {
     primary: "#ff2800",
+    primaryTwo: "#FF6C51",
     primaryLight: "#ffad9f",
     primaryBackground: "#f8f8f9",
     secondaryBackground: "#818e94a8",

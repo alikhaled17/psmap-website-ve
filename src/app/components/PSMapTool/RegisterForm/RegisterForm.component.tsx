@@ -1,39 +1,40 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from "react";
-import Container from "./PSMapTool_Pricing.style";
+import Container from "./RegisterForm.style";
 import { motion } from "framer-motion";
 import PricingCard from "../../shared/PricingCard/PricingCard.component";
 import useTranslation from "@/app/hooks/useTranslation";
+import Form from "../../shared/Forms/Form.component";
 
-const PSMapToolPricing = () => {
+const RegisterForm = () => {
   const { t, locale, setLocale } = useTranslation();
 
   return (
     <Container>
       <div className="warped_container">
         <motion.div
-          initial={{ y: 10, opacity: 0 }}
+          initial={{ y: 100, opacity: 0 }}
           whileInView={{
             y: 0,
             opacity: 1,
             transition: {
-              delay: 0.2,
+              delay: 0.1,
             },
           }}
-          className="PSMapTool_Pricing"
+          className="register_form"
         >
-          <p className="PSMapTool_Pricing--title">
-            {t("psmaptool_pricing").title}
-          </p>
-          <div className="PSMapTool_Pricing--pricing_types">
-            {t("psmaptool_pricing").cards.map((t: any, i: number) => (
-              <PricingCard key={i} data={t} />
-            ))}
-          </div>
+          <p
+            className="register_form--title primary_text"
+            dangerouslySetInnerHTML={{
+              __html: t("register_form").title,
+            }}
+          ></p>
+
+          <Form data={t("register_form").form} />
         </motion.div>
       </div>
     </Container>
   );
 };
 
-export default PSMapToolPricing;
+export default RegisterForm;

@@ -1,10 +1,13 @@
 import React from "react";
 import Container from "./PSMapTool_HowItWorks.style";
 import { motion } from "framer-motion";
-import CollectAnalyzeData from "@/app/assets/images/PSMapTool/CollectAnalyzeData.png";
+import CollectAnalyzeData from "@/app/assets/images/PSMapTool/how_1.png";
 import Image from "next/image";
+import useTranslation from "@/app/hooks/useTranslation";
 
 const PSMapToolHowItWorks = () => {
+  const { t, locale, setLocale } = useTranslation();
+
   return (
     <Container>
       <div className="warped_container">
@@ -19,76 +22,27 @@ const PSMapToolHowItWorks = () => {
           }}
           className="PSMapTool_HowItWorks"
         >
-          <p className="PSMapTool_HowItWorks--title">How it Works?</p>
+          <p className="PSMapTool_HowItWorks--title">
+            {t("psmaptool_howItWorks").title}
+          </p>
           <div className="HowItWorks_list">
-            <div className="item">
-              <div className="item_image">
-                <Image src={CollectAnalyzeData} alt="CollectAnalyzeData" />
+            {t("psmaptool_howItWorks").cards.map((m: any, i: number) => (
+              <div className="item" key={m}>
+                <div className="item_image">
+                  <Image src={m.img} alt={m.title} />
+                </div>
+                <div className="item_separator">
+                  <span className="item_separator--number">{`0${i + 1}`}</span>
+                </div>
+                <div className="item_content">
+                  <p className="item_content--title">{m.title}</p>
+                  <p className="item_content--desc">{m.desc}</p>
+                  <div className="mobile_image">
+                    <Image src={m.img} alt={m.title} />
+                  </div>
+                </div>
               </div>
-              <div className="item_separator">
-                <span className="item_separator--number">01</span>
-              </div>
-              <div className="item_content">
-                <p className="item_content--title">Collect & Analyze Data</p>
-                <p className="item_content--desc">
-                  PSMap allows you to collect data from various sources,
-                  including incident reports, safety observations, and near-miss
-                  reports. You can then analyze the data to identify patterns of
-                  problems.
-                </p>
-              </div>
-            </div>
-            <div className="item">
-              <div className="item_image">
-                <Image src={CollectAnalyzeData} alt="CollectAnalyzeData" />
-              </div>
-              <div className="item_separator">
-                <span className="item_separator--number">02</span>
-              </div>
-              <div className="item_content">
-                <p className="item_content--title">Collect & Analyze Data</p>
-                <p className="item_content--desc">
-                  PSMap allows you to collect data from various sources,
-                  including incident reports, safety observations, and near-miss
-                  reports. You can then analyze the data to identify patterns of
-                  problems.
-                </p>
-              </div>
-            </div>
-            <div className="item">
-              <div className="item_image">
-                <Image src={CollectAnalyzeData} alt="CollectAnalyzeData" />
-              </div>
-              <div className="item_separator">
-                <span className="item_separator--number">01</span>
-              </div>
-              <div className="item_content">
-                <p className="item_content--title">Collect & Analyze Data</p>
-                <p className="item_content--desc">
-                  PSMap allows you to collect data from various sources,
-                  including incident reports, safety observations, and near-miss
-                  reports. You can then analyze the data to identify patterns of
-                  problems.
-                </p>
-              </div>
-            </div>
-            <div className="item">
-              <div className="item_image">
-                <Image src={CollectAnalyzeData} alt="CollectAnalyzeData" />
-              </div>
-              <div className="item_separator">
-                <span className="item_separator--number">02</span>
-              </div>
-              <div className="item_content">
-                <p className="item_content--title">Collect & Analyze Data</p>
-                <p className="item_content--desc">
-                  PSMap allows you to collect data from various sources,
-                  including incident reports, safety observations, and near-miss
-                  reports. You can then analyze the data to identify patterns of
-                  problems.
-                </p>
-              </div>
-            </div>
+            ))}
           </div>
         </motion.div>
       </div>

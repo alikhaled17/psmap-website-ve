@@ -20,21 +20,16 @@ const WhatRCASection = () => {
         className="what_rca"
       >
         <p className="what_rca--title">{t("what_rca").title} </p>
-        {/* <iframe
-          width="1200"
-          height="615"
-          src="https://www.youtube.com/embed/16C3jaeUKjQ"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-        ></iframe> */}
-        <video controls style={{ width: "100%", maxHeight: "50vh" }}>
-          <source
-            src="https://media.w3.org/2010/05/sintel/trailer.mp4"
-            type="video/mp4"
-          />
-        </video>
+        <div className="what_rca--video">
+          <iframe
+            className="youtube"
+            src="https://www.youtube.com/embed/-G8Ev7Im5ZQ"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
       </motion.div>
     </Container>
   );

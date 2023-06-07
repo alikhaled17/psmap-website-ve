@@ -13,7 +13,7 @@ import useTranslation from "@/app/hooks/useTranslation";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 
-const Form = () => {
+const Form = ({ data }: any) => {
   const { t, locale, setLocale } = useTranslation();
 
   return (
@@ -23,7 +23,7 @@ const Form = () => {
           <OutlinedInput
             fullWidth
             id="outlined-adornment-password"
-            placeholder={t("sign_up").form.name}
+            placeholder={data.name}
             startAdornment={
               <InputAdornment position="start">
                 <IconButton aria-label="toggle" className="form_input--start">
@@ -44,7 +44,7 @@ const Form = () => {
           <OutlinedInput
             fullWidth
             id="outlined-adornment-password"
-            placeholder={t("sign_up").form.email}
+            placeholder={data.email}
             startAdornment={
               <InputAdornment position="start">
                 <IconButton aria-label="toggle" className="form_input--start">
@@ -65,7 +65,7 @@ const Form = () => {
           <OutlinedInput
             fullWidth
             id="outlined-adornment-password"
-            placeholder={t("sign_up").form.phone}
+            placeholder={data.phone}
             startAdornment={
               <InputAdornment position="start">
                 <IconButton aria-label="toggle" className="form_input--start">
@@ -86,7 +86,7 @@ const Form = () => {
           <OutlinedInput
             fullWidth
             id="outlined-adornment-password"
-            placeholder={t("sign_up").form.company}
+            placeholder={data.company}
             startAdornment={
               <InputAdornment position="start">
                 <IconButton aria-label="toggle" className="form_input--start">
@@ -108,7 +108,7 @@ const Form = () => {
           <OutlinedInput
             fullWidth
             id="outlined-adornment-password"
-            placeholder={t("sign_up").form.job}
+            placeholder={data.job}
             startAdornment={
               <InputAdornment position="start">
                 <IconButton aria-label="toggle" className="form_input--start">
@@ -130,7 +130,7 @@ const Form = () => {
           <OutlinedInput
             fullWidth
             id="outlined-adornment-password"
-            placeholder={t("sign_up").form.notes}
+            placeholder={data.notes}
             startAdornment={
               <InputAdornment position="start">
                 <IconButton aria-label="toggle" className="form_input--start">
@@ -149,7 +149,7 @@ const Form = () => {
           />
         </FormControl>
       </div>
-      <p className="desc primary_text">{t("sign_up").forom_tail}</p>
+      <p className="desc primary_text">{data.forom_tail}</p>
       <div className="acceptions">
         <div className="acceptions--item">
           <FormControlLabel control={<Checkbox />} label="" />
@@ -160,11 +160,9 @@ const Form = () => {
               marginRight: locale === "ar" ? "16px" : "",
             }}
           >
-            <small>{t("sign_up").form_privacy[0]}</small>
+            <small>{data.form_privacy[0]}</small>
             <Link href="" color="red">
-              <small style={{ color: "red" }}>
-                {t("sign_up").form_privacy[1]}
-              </small>
+              <small style={{ color: "red" }}>{data.form_privacy[1]}</small>
             </Link>
           </span>
         </div>
@@ -177,13 +175,12 @@ const Form = () => {
               marginRight: locale === "ar" ? "16px" : "",
             }}
           >
-            {t("sign_up").form_recieve_updates}{" "}
+            {data.form_recieve_updates}{" "}
           </span>
         </div>
       </div>
       <Link href="" className="global_button submit_btn">
-        {t("sign_up").form_submition}{" "}
-        {locale === "ar" ? <ArrowLeft /> : <ArrowRight />}
+        {data.form_submition} {locale === "ar" ? <ArrowLeft /> : <ArrowRight />}
       </Link>
     </Container>
   );

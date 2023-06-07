@@ -9,6 +9,7 @@ const Container = styled.div`
   background-repeat: no-repeat;
   padding-top: 80px;
   @media ${StyledTheme.media.laptop} {
+    padding-top: 0;
     background: unset;
   }
   .hero_container {

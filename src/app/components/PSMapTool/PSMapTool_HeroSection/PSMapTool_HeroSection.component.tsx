@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import { motion } from "framer-motion";
 import React from "react";
-import Container from "./PSMapToolHeroSection.style";
+import Container from "./PSMapTool_HeroSection.style";
 import PSMapToolHeroSectionImg from "@/app/assets/images/PSMapTool/PSMapTool_HeroSection.svg";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "iconsax-react";
@@ -26,34 +26,24 @@ const PSMapToolHeroSection = () => {
           className="PSMapTool_HeroSection"
         >
           <p className="PSMapTool_HeroSection--title">
-            Discover a Whole World of Problem-Solving Possibilities with our
-            Feature-Packed RCA Tool
+            {t("psmaptool_hero").title}
           </p>
           <p className="PSMapTool_HeroSection--desc">
-            Don't let system failures be the cause of errors. Reduce them by
-            over 50% with our PSMap RCA tool for both medical and manufacturing
-            organizations
+            {t("psmaptool_hero").desc[0]}
           </p>
           <p className="PSMapTool_HeroSection--desc">
-            We provide a suite of PSMap tools to help you conduct effective Root
-            Cause Analysis.
+            {t("psmaptool_hero").desc[1]}
           </p>
           <Link
             href=""
             className="global_button PSMapTool_HeroSection--trial_btn"
           >
-            Start Your Free Trial
+            {t("psmaptool_hero").trial_btn}
             {locale === "ar" ? <ArrowLeft /> : <ArrowRight />}
           </Link>
         </motion.div>
       </div>
-      <div className="hero_background">
-        <Image
-          src={PSMapToolHeroSectionImg}
-          className="hero_background--img"
-          alt="Hero Img"
-        />
-      </div>
+      <div className="hero_background"></div>
     </Container>
   );
 };
