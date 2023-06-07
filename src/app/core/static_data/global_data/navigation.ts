@@ -35,11 +35,11 @@ export const NavStrings: any = {
     items: [
       {
         text: "الرئيسية",
-        route: "",
+        route: "/",
       },
       {
         text: "أداة PSMap",
-        route: "",
+        route: "PSMapTool",
       },
       {
         text: "التدريب",

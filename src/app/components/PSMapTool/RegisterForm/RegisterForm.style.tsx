@@ -22,7 +22,9 @@ const Container = styled.div`
       line-height: 32px;
       text-align: center;
       color: #2f354d;
+      max-width: 790px;
       @media ${StyledTheme.media.laptop} {
+        max-width: unset;
         font-size: 18px;
         line-height: 26px;
       }
