@@ -41,6 +41,7 @@ const Container = styled.div`
       .youtube {
         width: 100%;
         height: 100%;
+        border: 0;
         box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
         border-radius: 8px;
         @media ${StyledTheme.media.laptop} {
