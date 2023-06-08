@@ -7,10 +7,16 @@ import { Global, Menu } from "iconsax-react";
 import useTranslation from "@/app/hooks/useTranslation";
 import HorizentalCard from "../HorizontalCard/HorizontalCard.component";
 import MenuIcon from "@mui/icons-material/Menu";
+import { useParams } from "next/navigation";
+import { useRouter } from "next/router";
 
 const NavigationBar = () => {
   const { t, locale, setLocale } = useTranslation();
+  const router = useRouter();
 
+  const checkRoute = (r: string) => {
+    return router.pathname === r ? "active" : "";
+  };
   return (
     <Container>
       <motion.span className="desktop_nav warped_container">
@@ -33,7 +39,12 @@ const NavigationBar = () => {
                     },
                   }}
                 >
-                  <Link href={el.route} className="item--text interactive_btn">
+                  <Link
+                    href={el.route}
+                    className={`item--text interactive_btn ${checkRoute(
+                      el.route
+                    )}`}
+                  >
                     {el.text}
                   </Link>
                 </motion.div>

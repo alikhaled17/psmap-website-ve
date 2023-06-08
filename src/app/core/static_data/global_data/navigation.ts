@@ -7,7 +7,7 @@ export const NavStrings: any = {
       },
       {
         text: "PSMap Tool",
-        route: "PSMapTool",
+        route: "/PSMapTool",
       },
       {
         text: "Training",
@@ -19,7 +19,7 @@ export const NavStrings: any = {
       },
       {
         text: "Resources",
-        route: "",
+        route: "/Resources",
       },
       {
         text: "Contact",
@@ -39,7 +39,7 @@ export const NavStrings: any = {
       },
       {
         text: "أداة PSMap",
-        route: "PSMapTool",
+        route: "/PSMapTool",
       },
       {
         text: "التدريب",
@@ -51,7 +51,7 @@ export const NavStrings: any = {
       },
       {
         text: "الموارد",
-        route: "",
+        route: "/Resources",
       },
       {
         text: "تواصل معنا",

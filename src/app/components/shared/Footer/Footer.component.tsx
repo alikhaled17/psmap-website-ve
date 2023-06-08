@@ -89,7 +89,7 @@ const Footer = () => {
                 </Link>
               </span>
               <span className="primary_text">
-                <Link href="" className="links--route">
+                <Link href="/Resources" className="links--route">
                   Resources
                 </Link>
               </span>

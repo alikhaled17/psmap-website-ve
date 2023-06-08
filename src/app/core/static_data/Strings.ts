@@ -10,6 +10,7 @@ import { PsmapToolHeroStrings } from "./psmaptool_data/psmaptool_hero_section";
 import { PsmapToolHowItWorksStrings } from "./psmaptool_data/psmaptool_howitworks_section";
 import { PsmapToolPricingStrings } from "./psmaptool_data/psmaptool_pricing_section";
 import { RegisterStrings } from "./psmaptool_data/register_section";
+import { ResourcesHeroStrings } from "./resources_data/resources_hero_section";
 
 export const LangStrings: any = {
   en: {
@@ -28,6 +29,8 @@ export const LangStrings: any = {
     psmaptool_about: PsmapToolAboutStrings.en,
     // PSMAP-TOOL PAGE -> register
     register_form: RegisterStrings.en,
+    // RESOURCES PAGE
+    resources_hero: ResourcesHeroStrings.en,
   },
   ar: {
     nav: NavStrings.ar,
@@ -45,5 +48,7 @@ export const LangStrings: any = {
     psmaptool_about: PsmapToolAboutStrings.ar,
     // PSMAP-TOOL PAGE -> register
     register_form: RegisterStrings.ar,
+    // RESOURCES PAGE
+    resources_hero: ResourcesHeroStrings.ar,
   },
 };
