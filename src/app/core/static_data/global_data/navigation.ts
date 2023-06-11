@@ -11,7 +11,7 @@ export const NavStrings: any = {
       },
       {
         text: "Training",
-        route: "",
+        route: "/Training",
       },
       {
         text: "About",
@@ -28,7 +28,7 @@ export const NavStrings: any = {
     ],
     joinBtn: {
       text: "Join Community",
-      href: "",
+      href: "/Community",
     },
   },
   ar: {
@@ -43,7 +43,7 @@ export const NavStrings: any = {
       },
       {
         text: "التدريب",
-        route: "",
+        route: "/Training",
       },
       {
         text: "عنا",
@@ -60,7 +60,7 @@ export const NavStrings: any = {
     ],
     joinBtn: {
       text: "مجتمعنا",
-      href: "",
+      href: "/Community",
     },
   },
 };

@@ -1,3 +1,7 @@
+import { TrainingHeroStrings } from "./Training/training_hero_section";
+import { TrainingRcaStrings } from "./Training/training_rca_section";
+import { CommunityAboutStrings } from "./community_data/community_about_section";
+import { CommunityHeroStrings } from "./community_data/community_hero_section";
 import { NavStrings } from "./global_data/navigation";
 import { AboutStrings } from "./home_data/about_section";
 import { FactoryStrings } from "./home_data/factory_section";
@@ -10,6 +14,7 @@ import { PsmapToolHeroStrings } from "./psmaptool_data/psmaptool_hero_section";
 import { PsmapToolHowItWorksStrings } from "./psmaptool_data/psmaptool_howitworks_section";
 import { PsmapToolPricingStrings } from "./psmaptool_data/psmaptool_pricing_section";
 import { RegisterStrings } from "./psmaptool_data/register_section";
+import { EBookStrings } from "./resources_data/register_section";
 import { ResourcesHeroStrings } from "./resources_data/resources_hero_section";
 
 export const LangStrings: any = {
@@ -31,6 +36,13 @@ export const LangStrings: any = {
     register_form: RegisterStrings.en,
     // RESOURCES PAGE
     resources_hero: ResourcesHeroStrings.en,
+    ebookk_form: EBookStrings.en,
+    // JOIN COMMUNITY PAGE
+    community_hero: CommunityHeroStrings.en,
+    community_about: CommunityAboutStrings.en,
+    // TRAINING PAGE
+    training_hero: TrainingHeroStrings.en,
+    training_learn_rca: TrainingRcaStrings.en,
   },
   ar: {
     nav: NavStrings.ar,
@@ -50,5 +62,12 @@ export const LangStrings: any = {
     register_form: RegisterStrings.ar,
     // RESOURCES PAGE
     resources_hero: ResourcesHeroStrings.ar,
+    ebookk_form: EBookStrings.ar,
+    // JOIN COMMUNITY PAGE
+    community_hero: CommunityHeroStrings.ar,
+    community_about: CommunityAboutStrings.ar,
+    // TRAINING PAGE
+    training_hero: TrainingHeroStrings.ar,
+    training_learn_rca: TrainingRcaStrings.ar,
   },
 };

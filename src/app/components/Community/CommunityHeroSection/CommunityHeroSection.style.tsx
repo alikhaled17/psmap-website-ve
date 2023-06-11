@@ -3,17 +3,15 @@ import styled from "styled-components";
 import HeroBg from "@/app/assets/images/Home/HeroSectionBg.svg";
 
 const Container = styled.div`
-  background: url(${HeroBg.src});
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   padding-top: 80px;
-  padding-bottom: 32px;
   @media ${StyledTheme.media.laptop} {
     padding-top: 0;
     background: unset;
   }
-  .hero_container {
+  .communityhero_container {
     min-height: 100vh;
     display: flex;
     justify-content: space-between;
@@ -39,7 +37,6 @@ const Container = styled.div`
         @media ${StyledTheme.media.laptop} {
           font-size: 24px;
           line-height: 32px !important;
-          max-width: 343px;
           margin: 0 auto 24px;
         }
       }
@@ -50,7 +47,6 @@ const Container = styled.div`
         width: 600px;
         @media ${StyledTheme.media.laptop} {
           font-size: 14px;
-          max-width: 343px;
           width: unset;
           margin: 0 auto;
         }
@@ -80,29 +76,49 @@ const Container = styled.div`
             margin: 32px 130px 0;
           }
         }
-        &--play_btn {
-          width: 45px;
-          height: 45px;
-          border-radius: 50%;
-          background-color: #fff;
-          border: 2px solid rgba(238, 238, 238, 1);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-        &--watch_btn {
-          font-size: 20px;
-        }
       }
     }
 
-    .hero_img {
+    .communityhero_img {
       width: 50%;
       @media ${StyledTheme.media.laptop} {
         display: none;
       }
       img {
         width: 100%;
+      }
+    }
+  }
+
+  .footer_section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px;
+    @media ${StyledTheme.media.laptop} {
+      padding: 40px 0;
+    }
+    &--title {
+      font-size: 32px;
+      font-weight: bold;
+      margin: 0;
+      padding: 0;
+      margin-bottom: 24px;
+      @media ${StyledTheme.media.laptop} {
+        font-size: 24px;
+        line-height: 32px !important;
+        margin: 0 auto 24px;
+      }
+    }
+    &--desc {
+      font-size: 16px;
+      color: ${StyledTheme.colors.secondaryFont};
+      @media ${StyledTheme.media.laptop} {
+        font-size: 14px;
+        width: unset;
+        margin: 0 auto;
       }
     }
   }

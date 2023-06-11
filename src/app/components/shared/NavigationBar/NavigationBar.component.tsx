@@ -72,7 +72,7 @@ const NavigationBar = () => {
             />
           </Link>
           <Link
-            href=""
+            href={t("nav").joinBtn.href}
             className="global_button desktop_nav--community_section--join_btn"
           >
             {t("nav").joinBtn.text}

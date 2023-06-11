@@ -1,6 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import BookImg from "@/app/assets/images/Resources/BookImg.png";
 
+import { useState } from "react";
 import StarImg from "@/app/assets/images/global/star.svg";
 import useTranslation from "@/app/hooks/useTranslation";
 import { motion } from "framer-motion";
@@ -8,16 +9,22 @@ import { ArrowLeft, ArrowRight, Play } from "iconsax-react";
 import Image from "next/image";
 import Link from "next/link";
 import Container from "./Resources_HeroSection.style";
-
+import EbookForm from "../EbookForm/EbookForm.component";
 const ResourcesHeroSection = () => {
   const { t, locale, setLocale } = useTranslation();
-
+  const [isEbookForm, setIsEbookForm] = useState<boolean>(false);
   return (
     <Container
       className={`
       ${locale}
     `}
     >
+      {isEbookForm && (
+        <EbookForm
+          data={t("ebookk_form").form}
+          setIsEbookForm={setIsEbookForm}
+        />
+      )}
       <div className="warped_container">
         <div className="resources_hero_container desktop_screen">
           <motion.div
@@ -55,6 +62,9 @@ const ResourcesHeroSection = () => {
               <Link
                 href=""
                 className="global_button resources_hero_section--trial_btn"
+                onClick={() => {
+                  setIsEbookForm(true);
+                }}
               >
                 {t("resources_hero").download_btn}
                 {locale === "ar" ? <ArrowLeft /> : <ArrowRight />}
@@ -136,6 +146,9 @@ const ResourcesHeroSection = () => {
               <Link
                 href=""
                 className="global_button resources_hero_section--trial_btn"
+                onClick={() => {
+                  setIsEbookForm(true);
+                }}
               >
                 {t("resources_hero").download_btn}
                 {locale === "ar" ? <ArrowLeft /> : <ArrowRight />}

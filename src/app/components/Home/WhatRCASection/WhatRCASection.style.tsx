@@ -7,6 +7,8 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-bottom: 60px;
+  padding-top: 40px;
   @media ${StyledTheme.media.laptop} {
     min-height: unset;
     padding-bottom: 12px;
@@ -26,7 +28,7 @@ const Container = styled.div`
     }
     &--video {
       background-image: linear-gradient(#271717 40%, #5a0f00, #d02100);
-      width: 90vw;
+      width: 85vw;
       height: 600px;
       padding: 24px 86px;
       background-color: red;

@@ -31,7 +31,7 @@ const Container = styled.div`
     &--pricing_types {
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start;
       gap: 20px;
       @media ${StyledTheme.media.laptop} {
         flex-direction: column;

@@ -99,7 +99,7 @@ const Footer = () => {
                 </Link>
               </span>
               <span className="primary_text">
-                <Link href="" className="links--route">
+                <Link href="/Community" className="links--route">
                   Join community
                 </Link>
               </span>

@@ -1,23 +1,38 @@
 import { StyledTheme } from "@/app/core/theme/StyledTheme";
 import styled from "styled-components";
-import HeroBg from "@/app/assets/images/Home/HeroSectionBg.svg";
+import HeroBgEn from "@/app/assets/images/Training/TrainingHeroBGEN.svg";
+import HeroBgAr from "@/app/assets/images/Training/TrainingHeroBGAR.svg";
 
 const Container = styled.div`
-  background: url(${HeroBg.src});
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  padding-top: 80px;
+  padding-top: 150px;
   padding-bottom: 32px;
+  &.ar {
+    background: url(${HeroBgAr.src});
+    background-size: 200px;
+    background-position: 50% 58%;
+    background-repeat: no-repeat;
+    @media ${StyledTheme.media.laptop} {
+      background: unset;
+    }
+  }
+  &.en {
+    background: url(${HeroBgEn.src});
+    background-size: 200px;
+    background-position: 50% 58%;
+    background-repeat: no-repeat;
+    @media ${StyledTheme.media.laptop} {
+      background: unset;
+    }
+  }
   @media ${StyledTheme.media.laptop} {
     padding-top: 0;
     background: unset;
   }
-  .hero_container {
-    min-height: 100vh;
+  .training_hero_container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 125px;
     @media ${StyledTheme.media.laptop} {
       min-height: unset;
       flex-direction: column;
@@ -96,13 +111,16 @@ const Container = styled.div`
       }
     }
 
-    .hero_img {
+    .training_hero_img {
       width: 50%;
+      display: flex;
+      justify-content: flex-end;
       @media ${StyledTheme.media.laptop} {
         display: none;
       }
       img {
-        width: 100%;
+        border-radius: 8px;
+        height: 100%;
       }
     }
   }

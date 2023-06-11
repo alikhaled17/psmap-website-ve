@@ -6,7 +6,7 @@ const Container = styled.div`
   width: 500px;
   background-color: #3b3b3b;
   color: #fff;
-  min-height: 100vh;
+  min-height: 120vh;
   @media ${StyledTheme.media.laptop} {
     min-width: unset;
     width: unset;
