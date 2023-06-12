@@ -4,22 +4,24 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import factory_img from "@/app/assets/images/Home/factory.png";
 import useTranslation from "@/app/hooks/useTranslation";
+import Link from "next/link";
+import { ArrowLeft, ArrowRight } from "iconsax-react";
 
 type HorizontalCardProps = {
   direction?: boolean;
   cardImg?: any;
   description?: string;
   title?: string;
-  hasBtn?: boolean;
-  buttonText?: string;
+  hasBtn?: string;
+  btnHref?: string;
 };
 const HorizontalCard = ({
   direction = true,
   cardImg = "",
   description = "",
   title = "",
-  hasBtn = false,
-  buttonText = "",
+  hasBtn = "",
+  btnHref = "",
 }: HorizontalCardProps) => {
   const { t, locale, setLocale } = useTranslation();
 
@@ -48,6 +50,31 @@ const HorizontalCard = ({
               __html: description,
             }}
           ></p>
+          {hasBtn && (
+            <>
+              {direction ? (
+                <div
+                  className="horizontal_card--content--btn"
+                  style={{ justifyContent: "flex-start" }}
+                >
+                  <Link href={btnHref} className="global_button button">
+                    {hasBtn}
+                    {locale === "ar" ? <ArrowLeft /> : <ArrowRight />}
+                  </Link>
+                </div>
+              ) : (
+                <div
+                  className="horizontal_card--content--btn"
+                  style={{ justifyContent: "flex-end" }}
+                >
+                  <Link href={btnHref} className="global_button button">
+                    {locale === "ar" ? <ArrowLeft /> : <ArrowRight />}
+                    {hasBtn}
+                  </Link>
+                </div>
+              )}
+            </>
+          )}
         </div>
       </motion.div>
     </Container>

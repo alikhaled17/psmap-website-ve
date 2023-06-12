@@ -3,17 +3,17 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import Container from "./NavigationBar.style";
-import { Global, Menu } from "iconsax-react";
+import { CloseCircle, Global, Menu } from "iconsax-react";
 import useTranslation from "@/app/hooks/useTranslation";
 import HorizentalCard from "../HorizontalCard/HorizontalCard.component";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useParams } from "next/navigation";
 import { useRouter } from "next/router";
-
+import { useState } from "react";
 const NavigationBar = () => {
   const { t, locale, setLocale } = useTranslation();
   const router = useRouter();
-
+  const [SideBar, setSideBar] = useState(false);
   const checkRoute = (r: string) => {
     return router.pathname === r ? "active" : "";
   };
@@ -85,13 +85,71 @@ const NavigationBar = () => {
             <Image src={desktop_logo} alt="psmap logo" />
           </div>
           <div
-            onClick={() => {
-              setLocale(locale === "en" ? "ar" : "en");
-            }}
+            onClick={() => setSideBar(true)}
             className="tablet_nav--main--menu_icon"
           >
             <MenuIcon />
           </div>
+          {SideBar && (
+            <div className="tablet_nav_sidebar">
+              <motion.div
+                initial={{ x: locale === "ar" ? -100 : 100, opacity: 0 }}
+                whileInView={{
+                  x: 0,
+                  opacity: 1,
+                  transition: {
+                    delay: 0.1,
+                  },
+                }}
+                className="tablet_nav_sidebar--menu"
+              >
+                <div className="tablet_nav_sidebar--menu--header">
+                  <Image src={desktop_logo} alt="psmap logo" />
+                  <span
+                    className="close_icon"
+                    onClick={() => setSideBar(false)}
+                  >
+                    <CloseCircle />
+                  </span>
+                </div>
+                <div className="tablet_nav_sidebar--menu--body">
+                  <ul className="menu_items">
+                    {t("nav").items.map(
+                      (el: { text: string; route: string }, index: number) => (
+                        <li
+                          key={index}
+                          className={`menu_items--item ${checkRoute(el.route)}`}
+                        >
+                          <Link
+                            href={el.route}
+                            onClick={() => setSideBar(false)}
+                          >
+                            {el.text}
+                          </Link>
+                        </li>
+                      )
+                    )}
+                    <li className="menu_items--item">
+                      <Global
+                        onClick={() => {
+                          setLocale(locale === "en" ? "ar" : "en");
+                        }}
+                      />
+                    </li>
+                  </ul>
+                </div>
+                <div className="tablet_nav_sidebar--menu--join">
+                  <Link
+                    href={t("nav").joinBtn.href}
+                    onClick={() => setSideBar(false)}
+                    className="global_button tablet_nav_sidebar--menu--join_btn"
+                  >
+                    {t("nav").joinBtn.text}
+                  </Link>
+                </div>
+              </motion.div>
+            </div>
+          )}
         </div>
       </motion.span>
     </Container>

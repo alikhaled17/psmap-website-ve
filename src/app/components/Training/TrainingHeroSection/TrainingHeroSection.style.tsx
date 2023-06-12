@@ -4,26 +4,9 @@ import HeroBgEn from "@/app/assets/images/Training/TrainingHeroBGEN.svg";
 import HeroBgAr from "@/app/assets/images/Training/TrainingHeroBGAR.svg";
 
 const Container = styled.div`
-  padding-top: 150px;
-  padding-bottom: 32px;
-  &.ar {
-    background: url(${HeroBgAr.src});
-    background-size: 200px;
-    background-position: 50% 58%;
-    background-repeat: no-repeat;
-    @media ${StyledTheme.media.laptop} {
-      background: unset;
-    }
-  }
-  &.en {
-    background: url(${HeroBgEn.src});
-    background-size: 200px;
-    background-position: 50% 58%;
-    background-repeat: no-repeat;
-    @media ${StyledTheme.media.laptop} {
-      background: unset;
-    }
-  }
+  padding-top: 180px;
+  padding-bottom: 40px;
+
   @media ${StyledTheme.media.laptop} {
     padding-top: 0;
     background: unset;
@@ -115,12 +98,26 @@ const Container = styled.div`
       width: 50%;
       display: flex;
       justify-content: flex-end;
+      position: relative;
+      .En_item {
+        top: 47%;
+        left: -170px;
+        width: 200px;
+        height: auto;
+        z-index: -1;
+      }
+      .Ar_item {
+        top: 47%;
+        right: -170px;
+        width: 200px;
+        height: auto;
+        z-index: -1;
+      }
       @media ${StyledTheme.media.laptop} {
         display: none;
       }
-      img {
+      .main_img {
         border-radius: 8px;
-        height: 100%;
       }
     }
   }

@@ -1,13 +1,9 @@
 /* eslint-disable react/no-unescaped-entities */
-import React from "react";
 import hero_img from "@/app/assets/images/Training/trainingRca.png";
-import Container from "./TrainingLearnRCASection.style";
+import useTranslation from "@/app/hooks/useTranslation";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
-import { Play, ArrowRight, ArrowLeft } from "iconsax-react";
-import useTranslation from "@/app/hooks/useTranslation";
-import HorizentalCard from "../../shared/HorizontalCard/HorizontalCard.component";
+import Container from "./TrainingLearnRCASection.style";
 
 const TrainingLearnRCASection = () => {
   const { t, locale, setLocale } = useTranslation();
@@ -34,7 +30,6 @@ const TrainingLearnRCASection = () => {
             whileInView={{
               x: 0,
               opacity: 1,
-
               transition: {
                 delay: 0.1,
               },

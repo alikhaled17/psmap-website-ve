@@ -87,6 +87,65 @@ const Container = styled.div`
           font-size: 30px;
         }
       }
+
+      .tablet_nav_sidebar {
+        position: fixed;
+        background-color: #00000030;
+        z-index: 10;
+        width: 100vw;
+        height: 100vh;
+        left: 0;
+        top: 0;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-end;
+        flex-direction: column;
+        &--menu {
+          background-color: #fff;
+          padding: 24px 24px;
+          flex-grow: 1;
+          width: 70%;
+          &--header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            img {
+              width: 120px;
+            }
+            .close_icon {
+              cursor: pointer;
+            }
+          }
+          &--body {
+            margin-bottom: 45px;
+            .menu_items {
+              list-style: none;
+              &--item {
+                margin: 16px 0;
+                &.active {
+                  color: ${StyledTheme.colors.primary};
+                }
+              }
+            }
+          }
+
+          &--join {
+            width: 100%;
+            display: flex;
+
+            &_btn {
+              flex: auto;
+              background-color: ${StyledTheme.colors.primary};
+              color: ${StyledTheme.colors.primaryBackground};
+              font-size: 16px;
+              padding: 8px 16px;
+              width: 100%;
+              flex-grow: 1;
+              text-align: center;
+            }
+          }
+        }
+      }
     }
   }
 `;

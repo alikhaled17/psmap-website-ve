@@ -27,9 +27,8 @@ const Container = styled.div`
     &--img {
       margin: 0;
       padding: 0;
-      /* width: 50%; */
       @media ${StyledTheme.media.laptop} {
-        margin: 16px;
+        margin: 16px 16px 0;
       }
       img {
         scale: 1.04;
@@ -45,7 +44,7 @@ const Container = styled.div`
       text-align: left;
       flex-grow: 1;
       @media ${StyledTheme.media.laptop} {
-        padding: 24px 0;
+        padding: 0 0 24px;
         text-align: center;
       }
       &--title {
@@ -59,6 +58,29 @@ const Container = styled.div`
       &--desc {
         font-size: 16px;
         color: ${StyledTheme.colors.secondaryFont};
+      }
+      &--btn {
+        display: flex;
+        width: 100%;
+        @media ${StyledTheme.media.laptop} {
+          justify-content: center !important;
+        }
+        .button {
+          background-color: ${StyledTheme.colors.primary};
+          color: ${StyledTheme.colors.primaryBackground};
+          font-size: 16px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 10px;
+          min-width: fit-content;
+          margin: 24px 0 0;
+          @media ${StyledTheme.media.laptop} {
+            flex: 0 0 220px;
+            width: fit-content;
+            margin: 24px 0 0;
+          }
+        }
       }
     }
   }

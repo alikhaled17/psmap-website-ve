@@ -1,13 +1,13 @@
 /* eslint-disable react/no-unescaped-entities */
-import React from "react";
+import HeroBgAr from "@/app/assets/images/Training/TrainingHeroBGAR.svg";
+import HeroBgEn from "@/app/assets/images/Training/TrainingHeroBGEN.svg";
 import hero_img from "@/app/assets/images/Training/trainingHeroImg.png";
-import Container from "./TrainingHeroSection.style";
+import useTranslation from "@/app/hooks/useTranslation";
 import { motion } from "framer-motion";
+import { ArrowLeft, ArrowRight } from "iconsax-react";
 import Image from "next/image";
 import Link from "next/link";
-import { Play, ArrowRight, ArrowLeft } from "iconsax-react";
-import useTranslation from "@/app/hooks/useTranslation";
-import HorizentalCard from "../../shared/HorizontalCard/HorizontalCard.component";
+import Container from "./TrainingHeroSection.style";
 
 const TrainingHeroSection = () => {
   const { t, locale, setLocale } = useTranslation();
@@ -21,6 +21,7 @@ const TrainingHeroSection = () => {
             whileInView={{
               x: 0,
               opacity: 1,
+              display: "",
               transition: {
                 delay: 0.1,
               },
@@ -42,7 +43,7 @@ const TrainingHeroSection = () => {
             ></p>
             <div className="info_section--trial ">
               <Link
-                href=""
+                href="/Training/register"
                 className="global_button info_section--trial--trial_btn"
               >
                 {t("training_hero").trial_btn}
@@ -50,18 +51,13 @@ const TrainingHeroSection = () => {
               </Link>
             </div>
           </motion.div>
-          <motion.div
-            initial={{ x: 100, opacity: 0 }}
-            whileInView={{
-              x: 0,
-              opacity: 1,
-              transition: {
-                delay: 0.1,
-              },
-            }}
-            className="training_hero_img"
-          >
-            <Image src={hero_img} alt="hero logo" />
+          <motion.div className="training_hero_img">
+            {locale === "ar" ? (
+              <Image src={HeroBgAr} className="Ar_item" alt="fly" />
+            ) : (
+              <Image src={HeroBgEn} className="En_item" alt="fly" />
+            )}
+            <Image src={hero_img} alt="hero logo" className="main_img" />
           </motion.div>
         </div>
       </div>

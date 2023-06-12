@@ -9,7 +9,7 @@ const Container = styled.div`
   background-color: #e7e7e7;
 
   @media ${StyledTheme.media.laptop} {
-    padding-bottom: 24px;
+    padding-bottom: 0;
     background: unset;
   }
   .training_rca_container {
@@ -18,7 +18,7 @@ const Container = styled.div`
     align-items: center;
     gap: 125px;
     @media ${StyledTheme.media.laptop} {
-      gap: 24px;
+      gap: unset;
       min-height: unset;
       flex-direction: column;
     }
@@ -56,6 +56,7 @@ const Container = styled.div`
           max-width: 343px;
           width: unset;
           margin: 0 auto;
+          margin-bottom: unset;
         }
       }
     }
@@ -66,6 +67,7 @@ const Container = styled.div`
       justify-content: flex-start;
       @media ${StyledTheme.media.laptop} {
         width: 100%;
+        margin-bottom: 24px;
       }
       img {
         border-radius: 8px;

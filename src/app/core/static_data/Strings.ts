@@ -1,3 +1,5 @@
+import { TrainingRCACertifiedStrings } from "./Training/training_certified_section";
+import { TrainingFeaturesStrings } from "./Training/training_features_section";
 import { TrainingHeroStrings } from "./Training/training_hero_section";
 import { TrainingRcaStrings } from "./Training/training_rca_section";
 import { CommunityAboutStrings } from "./community_data/community_about_section";
@@ -43,6 +45,8 @@ export const LangStrings: any = {
     // TRAINING PAGE
     training_hero: TrainingHeroStrings.en,
     training_learn_rca: TrainingRcaStrings.en,
+    training_features: TrainingFeaturesStrings.en,
+    training_certified: TrainingRCACertifiedStrings.en,
   },
   ar: {
     nav: NavStrings.ar,
@@ -69,5 +73,7 @@ export const LangStrings: any = {
     // TRAINING PAGE
     training_hero: TrainingHeroStrings.ar,
     training_learn_rca: TrainingRcaStrings.ar,
+    training_features: TrainingFeaturesStrings.ar,
+    training_certified: TrainingRCACertifiedStrings.ar,
   },
 };
