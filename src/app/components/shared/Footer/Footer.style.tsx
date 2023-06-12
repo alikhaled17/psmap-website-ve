@@ -123,6 +123,12 @@ const Container = styled.div`
           svg {
             color: ${StyledTheme.colors.primary};
           }
+          min-width: 150px;
+          margin: 0 auto;
+          small {
+            flex-grow: 1;
+            text-align: center;
+          }
         }
       }
     }

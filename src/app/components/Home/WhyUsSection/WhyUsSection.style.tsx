@@ -30,7 +30,7 @@ const Container = styled.div`
       text-align: center;
       @media ${StyledTheme.media.laptop} {
         width: 92%;
-        margin: 0 auto 24px;
+        margin: 0 auto 16px;
       }
     }
 
@@ -42,6 +42,7 @@ const Container = styled.div`
       @media ${StyledTheme.media.laptop} {
         flex-direction: column;
         justify-content: center;
+        margin-bottom: 16px;
       }
       &--col {
         width: 50%;

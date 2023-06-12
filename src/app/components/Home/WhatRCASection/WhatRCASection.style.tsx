@@ -10,6 +10,7 @@ const Container = styled.div`
   padding-bottom: 60px;
   padding-top: 40px;
   @media ${StyledTheme.media.laptop} {
+    padding-top: 16px;
     min-height: unset;
     padding-bottom: 12px;
   }

@@ -73,8 +73,7 @@ const Container = styled.div`
           flex-shrink: 0;
           min-width: fit-content;
           @media ${StyledTheme.media.laptop} {
-            flex: 0 0 220px;
-            width: fit-content;
+            width: unset;
             margin: 32px 130px 0;
           }
         }

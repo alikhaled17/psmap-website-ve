@@ -5,6 +5,9 @@ const Container = styled.div`
   padding: 0;
   margin: 0;
   margin-bottom: 48px;
+  @media ${StyledTheme.media.laptop} {
+    margin-bottom: 16px;
+  }
   .horizontal_card {
     overflow: hidden;
     background-color: #fff;

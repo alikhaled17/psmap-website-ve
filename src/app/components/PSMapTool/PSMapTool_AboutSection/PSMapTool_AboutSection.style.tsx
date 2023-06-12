@@ -10,13 +10,14 @@ const Container = styled.div`
     @media ${StyledTheme.media.laptop} {
       padding: 48px 0 24px;
       flex-direction: column;
+      gap: 16px;
     }
     &--content {
       width: 50%;
       @media ${StyledTheme.media.laptop} {
         width: unset;
         order: 2;
-        padding: 0 20px;
+        padding: 0 10px;
       }
       &--trial_btn {
         background-color: ${StyledTheme.colors.primary};

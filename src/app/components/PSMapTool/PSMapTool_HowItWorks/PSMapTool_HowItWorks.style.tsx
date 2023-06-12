@@ -21,7 +21,7 @@ const Container = styled.div`
         background-color: #eeeeee;
         margin-bottom: unset;
         margin-top: unset;
-        padding-bottom: 24px;
+        padding-bottom: 0;
         padding-top: 24px;
       }
     }

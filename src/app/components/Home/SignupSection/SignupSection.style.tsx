@@ -11,6 +11,9 @@ const Container = styled.div`
     justify-content: center;
     padding: 40px 0;
     width: 100%;
+    @media ${StyledTheme.media.laptop} {
+      padding: 16px 0;
+    }
     &--title {
       font-weight: 700;
       font-size: 24px;

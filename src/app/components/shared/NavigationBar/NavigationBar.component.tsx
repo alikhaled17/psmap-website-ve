@@ -133,6 +133,7 @@ const NavigationBar = () => {
                       <Global
                         onClick={() => {
                           setLocale(locale === "en" ? "ar" : "en");
+                          setSideBar(false);
                         }}
                       />
                     </li>

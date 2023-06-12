@@ -7,6 +7,7 @@ const Container = styled.div`
   background-color: #3b3b3b;
   color: #fff;
   min-height: 120vh;
+  border-radius: 8px;
   @media ${StyledTheme.media.laptop} {
     min-width: unset;
     width: unset;
@@ -47,7 +48,7 @@ const Container = styled.div`
       text-align: center;
 
       @media ${StyledTheme.media.laptop} {
-        margin: 32px 0;
+        margin: 24px 0;
       }
     }
 
