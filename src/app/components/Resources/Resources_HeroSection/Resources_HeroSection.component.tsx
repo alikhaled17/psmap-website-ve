@@ -10,6 +10,8 @@ import Image from "next/image";
 import Link from "next/link";
 import Container from "./Resources_HeroSection.style";
 import EbookForm from "../EbookForm/EbookForm.component";
+import { FormType } from "@/app/interfaces/FormType.enum";
+
 const ResourcesHeroSection = () => {
   const { t, locale, setLocale } = useTranslation();
   const [isEbookForm, setIsEbookForm] = useState<boolean>(false);
@@ -23,6 +25,7 @@ const ResourcesHeroSection = () => {
         <EbookForm
           data={t("ebookk_form").form}
           setIsEbookForm={setIsEbookForm}
+          formType={FormType.EBook}
         />
       )}
       <div className="warped_container">

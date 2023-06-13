@@ -1,3 +1,5 @@
+import { FormType } from "@/app/interfaces/FormType.enum";
+
 export const PsmapToolPricingStrings: any = {
   en: {
     title: `The best RCA, For the best Pricing`,
@@ -6,6 +8,7 @@ export const PsmapToolPricingStrings: any = {
         label: "Free Edition",
         price: "$0",
         btn: "Get Start",
+        formType: FormType.FreeEdition,
         desc: "Create a more efficient and effective workflow with our easy-to-use tools.",
         list_label: "Enjoy our Free Edition and benefit from",
         list: [
@@ -22,6 +25,7 @@ export const PsmapToolPricingStrings: any = {
         label: "Enterprise Plus",
         price: "Custom Subscription",
         btn: "Get Start",
+        formType: FormType.CustomEdition,
         desc: "Take your problem-solving capabilities to the next level with our powerful tools.",
         list_label:
           "This package includes everything in our Free Edition, as well as...",
@@ -41,6 +45,7 @@ export const PsmapToolPricingStrings: any = {
         label: "الإصدار المجاني",
         price: "$0",
         btn: "ابدأ",
+        formType: FormType.FreeEdition,
         desc: "أنشئ مسار عمل أكثر فعالية وكفاءة باستخدام أدواتنا سهلة الاستخدام.",
         list_label: "استمتع بإصدارنا المجاني واحصل على...",
         list: [
@@ -57,6 +62,7 @@ export const PsmapToolPricingStrings: any = {
         label: "إصدار إنتربرايز بلس",
         price: "اشتراك مخصص",
         btn: "ابدأ",
+        formType: FormType.CustomEdition,
         desc: "ارتق بقدراتك في حل المشكلات إلى المستوى التالي باستخدام أدواتنا القوية.",
         list_label:
           "تتضمن هذه الحزمة كل شيء في الإصدار المجاني الخاص بنا ، بالإضافة إلى ...",

@@ -1,10 +1,9 @@
 /* eslint-disable react/no-unescaped-entities */
 import useTranslation from "@/app/hooks/useTranslation";
-import { ArrowRight, ArrowLeft } from "iconsax-react";
 import { motion } from "framer-motion";
 import Container from "./SignupSection.style";
 import Form from "../../shared/Forms/Form.component";
-import Link from "next/link";
+import { FormType } from "@/app/interfaces/FormType.enum";
 
 const SignupSection = () => {
   const { t, locale, setLocale } = useTranslation();
@@ -41,7 +40,7 @@ const SignupSection = () => {
               __html: t("sign_up").subtitle,
             }}
           ></p>
-          <Form data={t("sign_up").form} />
+          <Form data={t("sign_up").form} formType={FormType.Contact} />
         </motion.div>
       </div>
     </Container>

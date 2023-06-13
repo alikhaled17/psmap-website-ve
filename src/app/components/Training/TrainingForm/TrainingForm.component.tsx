@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import PricingCard from "../../shared/PricingCard/PricingCard.component";
 import useTranslation from "@/app/hooks/useTranslation";
 import Form from "../../shared/Forms/Form.component";
+import { FormType } from "@/app/interfaces/FormType.enum";
 
 const TrainingForm = () => {
   const { t, locale, setLocale } = useTranslation();
@@ -30,7 +31,7 @@ const TrainingForm = () => {
             }}
           ></p>
 
-          <Form data={t("register_form").form} />
+          <Form data={t("register_form").form} formType={FormType.Training}/>
         </motion.div>
       </div>
     </Container>

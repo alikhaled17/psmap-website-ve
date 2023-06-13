@@ -3,6 +3,7 @@ import factory_img from "@/app/assets/images/Training/factory.png";
 import useTranslation from "@/app/hooks/useTranslation";
 import HorizontalCard from "../../shared/HorizontalCard/HorizontalCard.component";
 import Container from "./TrainingFeatureSection.style";
+import { FormType } from "@/app/interfaces/FormType.enum";
 
 const TrainingFeatureSection = () => {
   const { t, locale, setLocale } = useTranslation();
@@ -19,6 +20,7 @@ const TrainingFeatureSection = () => {
           direction={locale === "en"}
           hasBtn={cardOne.btnText}
           btnHref="/Training/register"
+          btnHrefQuery={FormType.Training}
         />
         <HorizontalCard
           title={cardTwo.title}
@@ -27,6 +29,7 @@ const TrainingFeatureSection = () => {
           direction={locale === "ar"}
           hasBtn={cardTwo.btnText}
           btnHref="/Training/register"
+          btnHrefQuery={FormType.Training}
         />
       </div>
     </Container>

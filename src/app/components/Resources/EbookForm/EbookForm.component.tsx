@@ -1,5 +1,7 @@
 import {
+  Button,
   FormControl,
+  FormHelperText,
   IconButton,
   InputAdornment,
   OutlinedInput,
@@ -10,17 +12,100 @@ import {
   ArrowRight,
   Briefcase,
   Building,
-  Call,
   CloseCircle,
-  Note1,
   Sms,
   User,
 } from "iconsax-react";
 import { motion } from "framer-motion";
-import Link from "next/link";
 import useTranslation from "@/app/hooks/useTranslation";
-function EbookForm({ data, setIsEbookForm }: any): JSX.Element {
+import { useDispatch, useSelector } from "react-redux";
+import { EBookFormInput, FormDataState } from "@/app/interfaces/Form";
+import * as yup from "yup";
+import Regex from "@/app/helpers/regex";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { useEffect } from "react";
+import { submitForm } from "@/app/store/reducers/form-reducers/FormStore";
+
+function EbookForm({ data, setIsEbookForm, formType }: any): JSX.Element {
+  const dispatch = useDispatch();
   const { t, locale, setLocale } = useTranslation();
+  const { eBookFormData } = useSelector((state: FormDataState) => state);
+
+  const defaultValues: EBookFormInput = eBookFormData;
+
+  const schema = yup
+    .object({
+      fullName: yup
+        .string()
+        .required(t("form_errors").requiredNameErr)
+        .matches(Regex.notEmpty, t("form_errors").requiredNameErr)
+        .max(50, t("form_errors").maxLength_50),
+
+      email: yup
+        .string()
+        .required(t("form_errors").requiredEmailErr)
+        .matches(Regex.notEmpty, t("form_errors").requiredEmailErr)
+        .matches(Regex.email, t("form_errors").inValidEmailErr)
+        .max(50, t("form_errors").maxLength_50),
+
+      company: yup.string().max(50, t("form_errors").maxLength_50),
+      jobTitle: yup.string().max(50, t("form_errors").maxLength_50),
+    })
+    .required();
+
+  const {
+    register,
+    handleSubmit,
+    watch,
+    reset,
+    setValue,
+    trigger,
+    formState: { errors, isSubmitSuccessful },
+  } = useForm<EBookFormInput>({
+    resolver: yupResolver(schema),
+    defaultValues,
+  });
+
+  useEffect(() => {
+    if (isSubmitSuccessful) {
+      reset({
+        fullName: "",
+        email: "",
+        company: "",
+        jobTitle: "",
+        phoneNumber: null,
+        notes: null,
+      });
+    }
+  }, [isSubmitSuccessful, reset]);
+
+  watch(["fullName", "email", "company", "jobTitle"]);
+
+  const onSubmit = (data: EBookFormInput) => {
+    const body: EBookFormInput = {
+      fullName: data.fullName,
+      email: data.email,
+      phoneNumber: null,
+      notes: null,
+      company:
+        data.company?.trim() === "" || data.company?.trim() === undefined
+          ? null
+          : data.company?.trim(),
+      jobTitle:
+        data.jobTitle?.trim() === "" || data.jobTitle?.trim() === undefined
+          ? null
+          : data.jobTitle?.trim(),
+    };
+
+    dispatch(submitForm({ body, formType }))
+      .then(() => {
+        reset({ ...defaultValues });
+        setIsEbookForm(false);
+        //TODO: download e-book
+      })
+      .catch((err: any) => console.log("err", err));
+  };
 
   return (
     <Container>
@@ -46,6 +131,11 @@ function EbookForm({ data, setIsEbookForm }: any): JSX.Element {
               fullWidth
               id="outlined-adornment-password"
               placeholder={data.name}
+              {...register("fullName")}
+              onChange={async (e) => {
+                setValue("fullName", e.target.value);
+                await trigger(["fullName"]);
+              }}
               startAdornment={
                 <InputAdornment position="start">
                   <IconButton aria-label="toggle" className="form_input--start">
@@ -61,12 +151,22 @@ function EbookForm({ data, setIsEbookForm }: any): JSX.Element {
                 </InputAdornment>
               }
             />
+            {!!errors.fullName?.message && (
+              <FormHelperText error id="accountId-error">
+                {errors.fullName?.message}
+              </FormHelperText>
+            )}
           </FormControl>
           <FormControl className="form_input" fullWidth variant="outlined">
             <OutlinedInput
               fullWidth
               id="outlined-adornment-password"
               placeholder={data.email}
+              {...register("email")}
+              onChange={async (e) => {
+                setValue("email", e.target.value);
+                await trigger(["email"]);
+              }}
               startAdornment={
                 <InputAdornment position="start">
                   <IconButton aria-label="toggle" className="form_input--start">
@@ -82,12 +182,22 @@ function EbookForm({ data, setIsEbookForm }: any): JSX.Element {
                 </InputAdornment>
               }
             />
+            {!!errors.email?.message && (
+              <FormHelperText error id="accountId-error">
+                {errors.email?.message}
+              </FormHelperText>
+            )}
           </FormControl>
           <FormControl className="form_input" fullWidth variant="outlined">
             <OutlinedInput
               fullWidth
               id="outlined-adornment-password"
               placeholder={data.company}
+              {...register("company")}
+              onChange={async (e) => {
+                setValue("company", e.target.value);
+                await trigger(["company"]);
+              }}
               startAdornment={
                 <InputAdornment position="start">
                   <IconButton aria-label="toggle" className="form_input--start">
@@ -104,12 +214,22 @@ function EbookForm({ data, setIsEbookForm }: any): JSX.Element {
                 </InputAdornment>
               }
             />
+            {!!errors.company?.message && (
+              <FormHelperText error id="accountId-error">
+                {errors.company?.message}
+              </FormHelperText>
+            )}
           </FormControl>
           <FormControl className="form_input" fullWidth variant="outlined">
             <OutlinedInput
               fullWidth
               id="outlined-adornment-password"
               placeholder={data.job}
+              {...register("jobTitle")}
+              onChange={async (e) => {
+                setValue("jobTitle", e.target.value);
+                await trigger(["jobTitle"]);
+              }}
               startAdornment={
                 <InputAdornment position="start">
                   <IconButton aria-label="toggle" className="form_input--start">
@@ -126,11 +246,19 @@ function EbookForm({ data, setIsEbookForm }: any): JSX.Element {
                 </InputAdornment>
               }
             />
+            {!!errors.jobTitle?.message && (
+              <FormHelperText error id="accountId-error">
+                {errors.jobTitle?.message}
+              </FormHelperText>
+            )}
           </FormControl>
-          <Link href="" className="global_button form--download_btn">
+          <Button
+            className="global_button form--download_btn"
+            onClick={handleSubmit((data) => onSubmit(data))}
+          >
             {t("resources_hero").download_btn}
             {locale === "ar" ? <ArrowLeft /> : <ArrowRight />}
-          </Link>
+          </Button>
         </div>
       </motion.div>
     </Container>

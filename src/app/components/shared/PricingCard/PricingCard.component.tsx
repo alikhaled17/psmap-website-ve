@@ -13,7 +13,10 @@ const PricingCard = ({ data }: any) => {
         <p className="pricing_card--label"> {data.label}</p>
         <p className="pricing_card--title"> {data.price}</p>
         <Link
-          href="/PSMapTool/register"
+          href={{
+            pathname: "/PSMapTool/register",
+            query: { formType: data.formType },
+          }}
           className="global_button pricing_card--btn"
         >
           {data.btn}

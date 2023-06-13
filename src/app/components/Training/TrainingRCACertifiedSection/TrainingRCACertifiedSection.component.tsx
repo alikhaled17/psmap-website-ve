@@ -7,6 +7,7 @@ import mainImg from "@/app/assets/images/Training/RCACertified.png";
 import patternImg from "@/app/assets/images/Training/pattern.svg";
 import { ArrowLeft, ArrowRight } from "iconsax-react";
 import Link from "next/link";
+import { FormType } from "@/app/interfaces/FormType.enum";
 
 const TrainingRCACertifiedSection = () => {
   const { t, locale, setLocale } = useTranslation();
@@ -46,7 +47,10 @@ const TrainingRCACertifiedSection = () => {
             }}
           ></p>
           <Link
-            href="/Training/register"
+            href={{
+              pathname: "/Training/register",
+              query: { formType: FormType.Training },
+            }}
             className="global_button RCACertified_section--btn"
           >
             {t("training_certified").btn}

@@ -2,8 +2,14 @@ import { TrainingRCACertifiedStrings } from "./Training/training_certified_secti
 import { TrainingFeaturesStrings } from "./Training/training_features_section";
 import { TrainingHeroStrings } from "./Training/training_hero_section";
 import { TrainingRcaStrings } from "./Training/training_rca_section";
+import { AboutComparisonStrings } from "./about_data/about_comparison_section";
+import { AboutHeroStrings } from "./about_data/about_hero_section";
+import { AboutVisionStrings } from "./about_data/about_vision_section";
 import { CommunityAboutStrings } from "./community_data/community_about_section";
 import { CommunityHeroStrings } from "./community_data/community_hero_section";
+import { FormStrings } from "./form_errors_data/form_errors";
+import { SuccessPopupStrings } from "./global_data/SucessPopup";
+import { ContactHeroSectionStrings } from "./contact/contact_hero_section";
 import { FooterStrings } from "./global_data/footer";
 import { NavStrings } from "./global_data/navigation";
 import { AboutStrings } from "./home_data/about_section";
@@ -47,8 +53,16 @@ export const LangStrings: any = {
     // TRAINING PAGE
     training_hero: TrainingHeroStrings.en,
     training_learn_rca: TrainingRcaStrings.en,
+    form_errors: FormStrings.en,
     training_features: TrainingFeaturesStrings.en,
     training_certified: TrainingRCACertifiedStrings.en,
+    // ABOUT PAGE
+    about_hero: AboutHeroStrings.en,
+    about_vision: AboutVisionStrings.en,
+    about_comparison: AboutComparisonStrings.en,
+    // CONTACT PAGE
+    success_popup: SuccessPopupStrings.en,
+    contact_hero: ContactHeroSectionStrings.en,
   },
   ar: {
     nav: NavStrings.ar,
@@ -76,7 +90,15 @@ export const LangStrings: any = {
     // TRAINING PAGE
     training_hero: TrainingHeroStrings.ar,
     training_learn_rca: TrainingRcaStrings.ar,
+    form_errors: FormStrings.ar,
     training_features: TrainingFeaturesStrings.ar,
     training_certified: TrainingRCACertifiedStrings.ar,
+    // ABOUT PAGE
+    about_hero: AboutHeroStrings.ar,
+    about_vision: AboutVisionStrings.ar,
+    about_comparison: AboutComparisonStrings.ar,
+    // CONTACT PAGE
+    success_popup: SuccessPopupStrings.ar,
+    contact_hero: ContactHeroSectionStrings.ar,
   },
 };

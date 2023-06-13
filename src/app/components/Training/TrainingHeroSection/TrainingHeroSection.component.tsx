@@ -8,6 +8,7 @@ import { ArrowLeft, ArrowRight } from "iconsax-react";
 import Image from "next/image";
 import Link from "next/link";
 import Container from "./TrainingHeroSection.style";
+import { FormType } from "@/app/interfaces/FormType.enum";
 
 const TrainingHeroSection = () => {
   const { t, locale, setLocale } = useTranslation();
@@ -43,7 +44,10 @@ const TrainingHeroSection = () => {
             ></p>
             <div className="info_section--trial ">
               <Link
-                href="/Training/register"
+                href={{
+                  pathname: "/Training/register",
+                  query: { formType: FormType.Training },
+                }}
                 className="global_button info_section--trial--trial_btn"
               >
                 {t("training_hero").trial_btn}

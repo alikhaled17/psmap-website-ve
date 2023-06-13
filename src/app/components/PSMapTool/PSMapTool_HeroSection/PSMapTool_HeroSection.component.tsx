@@ -2,11 +2,10 @@
 import { motion } from "framer-motion";
 import React from "react";
 import Container from "./PSMapTool_HeroSection.style";
-import PSMapToolHeroSectionImg from "@/app/assets/images/PSMapTool/PSMapTool_HeroSection.svg";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "iconsax-react";
 import useTranslation from "@/app/hooks/useTranslation";
-import Image from "next/image";
+import { FormType } from "@/app/interfaces/FormType.enum";
 
 const PSMapToolHeroSection = () => {
   const { t, locale, setLocale } = useTranslation();
@@ -35,7 +34,10 @@ const PSMapToolHeroSection = () => {
             {t("psmaptool_hero").desc[1]}
           </p>
           <Link
-            href="/PSMapTool/register"
+            href={{
+              pathname: "/PSMapTool/register",
+              query: { formType: FormType.FreeEdition },
+            }}
             className="global_button PSMapTool_HeroSection--trial_btn"
           >
             {t("psmaptool_hero").trial_btn}

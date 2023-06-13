@@ -81,10 +81,10 @@ const Footer = () => {
               <span className="primary_text contacts--label">
                 {t("footer").contacts_label}
               </span>
-              <span className="primary_text contacts--item">
+              {/* <span className="primary_text contacts--item">
                 <Call variant="Bold" />
                 <small>+966500928211</small>
-              </span>
+              </span> */}
               <span className="primary_text contacts--item">
                 <Sms variant="Bold" />
                 <small>Info@psmap.io</small>

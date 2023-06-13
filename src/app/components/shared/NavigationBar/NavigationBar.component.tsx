@@ -3,11 +3,9 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import Container from "./NavigationBar.style";
-import { CloseCircle, Global, Menu } from "iconsax-react";
+import { CloseCircle, Global } from "iconsax-react";
 import useTranslation from "@/app/hooks/useTranslation";
-import HorizentalCard from "../HorizontalCard/HorizontalCard.component";
 import MenuIcon from "@mui/icons-material/Menu";
-import { useParams } from "next/navigation";
 import { useRouter } from "next/router";
 import { useState } from "react";
 const NavigationBar = () => {
@@ -17,6 +15,7 @@ const NavigationBar = () => {
   const checkRoute = (r: string) => {
     return router.pathname === r ? "active" : "";
   };
+
   return (
     <Container>
       <motion.span className="desktop_nav warped_container">

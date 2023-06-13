@@ -15,7 +15,7 @@ export const NavStrings: any = {
       },
       {
         text: "About",
-        route: "",
+        route: "/About",
       },
       {
         text: "Resources",
@@ -23,7 +23,7 @@ export const NavStrings: any = {
       },
       {
         text: "Contact",
-        route: "",
+        route: "/Contact",
       },
     ],
     joinBtn: {
@@ -47,7 +47,7 @@ export const NavStrings: any = {
       },
       {
         text: "عنا",
-        route: "",
+        route: "/About",
       },
       {
         text: "الموارد",
@@ -55,7 +55,7 @@ export const NavStrings: any = {
       },
       {
         text: "تواصل معنا",
-        route: "",
+        route: "/Contact",
       },
     ],
     joinBtn: {

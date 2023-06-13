@@ -6,6 +6,8 @@ import { LanguageProvider } from "@/app/core/LanguageProvider";
 import "../app/globals.scss";
 import NavigationBar from "@/app/components/shared/NavigationBar/NavigationBar.component";
 import Footer from "@/app/components/shared/Footer/Footer.component";
+import { Provider } from "react-redux";
+import { store } from "@/app/store/reducers/store";
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -19,13 +21,15 @@ export default function App({ Component, pageProps, router }: AppProps) {
   return (
     <>
       <GlobalStyle />
-      <ThemeProvider theme={StyledTheme}>
-        <LanguageProvider>
-          <NavigationBar />
-          <Component {...pageProps} key={router.route} />
-          <Footer />
-        </LanguageProvider>
-      </ThemeProvider>
+      <Provider store={store}>
+        <ThemeProvider theme={StyledTheme}>
+          <LanguageProvider>
+            <NavigationBar />
+            <Component {...pageProps} key={router.route} />
+            <Footer />
+          </LanguageProvider>
+        </ThemeProvider>
+      </Provider>
     </>
   );
 }

@@ -1,29 +1,139 @@
 import { User, Sms, Call, Building, Briefcase, Note1 } from "iconsax-react";
-import Visibility from "@mui/icons-material/Visibility";
-import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import FormControl from "@mui/material/FormControl";
 import IconButton from "@mui/material/IconButton";
 import InputAdornment from "@mui/material/InputAdornment";
-import InputLabel from "@mui/material/InputLabel";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import Container from "./Form.style";
 import Link from "next/link";
-import { Play, ArrowRight, ArrowLeft } from "iconsax-react";
+import { ArrowRight, ArrowLeft } from "iconsax-react";
 import useTranslation from "@/app/hooks/useTranslation";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
+import { useForm } from "react-hook-form";
+import { useDispatch, useSelector } from "react-redux";
+import * as yup from "yup";
+import Regex from "@/app/helpers/regex";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { FormDataState, FormInput } from "@/app/interfaces/Form";
+import { Button, FormHelperText } from "@mui/material";
+import { submitForm } from "@/app/store/reducers/form-reducers/FormStore";
+import { useEffect, useState } from "react";
+import SuccessPopup from "../SuccessPopup/SuccessPopup.component";
 
-const Form = ({ data }: any) => {
-  const { t, locale, setLocale } = useTranslation();
+const Form = ({ data, formType }: any) => {
+  const dispatch = useDispatch();
+  const [privacySelected, setPrivacySelected] = useState<boolean>(false);
+  const [successPopup, setSuccessPopup] = useState<boolean>(false);
+
+  const { t, locale } = useTranslation();
+  const { formData } = useSelector((state: FormDataState) => state);
+
+  const defaultValues: FormInput = formData;
+
+  const schema = yup
+    .object({
+      fullName: yup
+        .string()
+        .required(t("form_errors").requiredNameErr)
+        .matches(Regex.notEmpty, t("form_errors").requiredNameErr)
+        .max(50, t("form_errors").maxLength_50),
+
+      email: yup
+        .string()
+        .required(t("form_errors").requiredEmailErr)
+        .matches(Regex.notEmpty, t("form_errors").requiredEmailErr)
+        .matches(Regex.email, t("form_errors").inValidEmailErr)
+        .max(50, t("form_errors").maxLength_50),
+
+      phoneNumber: yup
+        .string()
+        .required(t("form_errors").requiredPhoneNumberErr)
+        .matches(Regex.notEmpty, t("form_errors").requiredPhoneNumberErr)
+        .min(6, t("form_errors").minPhoneNumberErr)
+        .max(50, t("form_errors").maxPhoneNumberErr)
+        .matches(Regex.phone, t("form_errors").inValidPhoneNumberErr),
+
+      company: yup.string().max(50, t("form_errors").maxLength_50),
+      jobTitle: yup.string().max(50, t("form_errors").maxLength_50),
+      notes: yup.string().max(150, t("form_errors").maxLength_150),
+    })
+    .required();
+
+  const {
+    register,
+    handleSubmit,
+    watch,
+    reset,
+    setValue,
+    trigger,
+    formState: { errors, isSubmitSuccessful },
+  } = useForm<FormInput>({
+    resolver: yupResolver(schema),
+    defaultValues,
+  });
+
+  useEffect(() => {
+    if (isSubmitSuccessful) {
+      reset({
+        fullName: "",
+        email: "",
+        phoneNumber: "",
+        company: "",
+        jobTitle: "",
+        notes: "",
+      });
+    }
+  }, [isSubmitSuccessful, reset]);
+
+  watch(["fullName", "email", "phoneNumber", "company", "jobTitle", "notes"]);
+
+  const onSubmit = (data: FormInput) => {
+    if (privacySelected) {
+      const body: FormInput = {
+        fullName: data.fullName,
+        email: data.email,
+        phoneNumber: data.phoneNumber,
+        company:
+          data.company?.trim() === "" || data.company?.trim() === undefined
+            ? null
+            : data.company?.trim(),
+        jobTitle:
+          data.jobTitle?.trim() === "" || data.jobTitle?.trim() === undefined
+            ? null
+            : data.jobTitle?.trim(),
+        notes:
+          data.notes?.trim() === "" || data.notes?.trim() === undefined
+            ? null
+            : data.notes?.trim(),
+      };
+
+      dispatch(submitForm({ body, formType }))
+        .then(() => {
+          reset({ ...defaultValues });
+          setPrivacySelected(false);
+          setSuccessPopup(true);
+        })
+        .catch((err: any) => console.log("err", err));
+    } else {
+      alert("error");
+    }
+  };
 
   return (
     <Container>
+      {successPopup && <SuccessPopup setIsSuccessPopup={setSuccessPopup} />}
       <div className="form">
         <FormControl className="form_input" fullWidth variant="outlined">
           <OutlinedInput
             fullWidth
             id="outlined-adornment-password"
+            {...register("fullName")}
             placeholder={data.name}
+            onChange={async (e) => {
+              setValue("fullName", e.target.value);
+              await trigger(["fullName"]);
+            }}
+            error={!!errors.fullName?.message}
             startAdornment={
               <InputAdornment position="start">
                 <IconButton aria-label="toggle" className="form_input--start">
@@ -39,12 +149,22 @@ const Form = ({ data }: any) => {
               </InputAdornment>
             }
           />
+          {!!errors.fullName?.message && (
+            <FormHelperText error id="accountId-error">
+              {errors.fullName?.message}
+            </FormHelperText>
+          )}
         </FormControl>
         <FormControl className="form_input" fullWidth variant="outlined">
           <OutlinedInput
             fullWidth
             id="outlined-adornment-password"
+            {...register("email")}
             placeholder={data.email}
+            onChange={async (e) => {
+              setValue("email", e.target.value);
+              await trigger(["email"]);
+            }}
             startAdornment={
               <InputAdornment position="start">
                 <IconButton aria-label="toggle" className="form_input--start">
@@ -60,12 +180,22 @@ const Form = ({ data }: any) => {
               </InputAdornment>
             }
           />
+          {!!errors.email?.message && (
+            <FormHelperText error id="accountId-error">
+              {errors.email?.message}
+            </FormHelperText>
+          )}
         </FormControl>
         <FormControl className="form_input" fullWidth variant="outlined">
           <OutlinedInput
             fullWidth
             id="outlined-adornment-password"
+            {...register("phoneNumber")}
             placeholder={data.phone}
+            onChange={async (e) => {
+              setValue("phoneNumber", e.target.value);
+              await trigger(["phoneNumber"]);
+            }}
             startAdornment={
               <InputAdornment position="start">
                 <IconButton aria-label="toggle" className="form_input--start">
@@ -81,12 +211,22 @@ const Form = ({ data }: any) => {
               </InputAdornment>
             }
           />
+          {!!errors.phoneNumber?.message && (
+            <FormHelperText error id="accountId-error">
+              {errors.phoneNumber?.message}
+            </FormHelperText>
+          )}
         </FormControl>
         <FormControl className="form_input" fullWidth variant="outlined">
           <OutlinedInput
             fullWidth
             id="outlined-adornment-password"
+            {...register("company")}
             placeholder={data.company}
+            onChange={async (e) => {
+              setValue("company", e.target.value);
+              await trigger(["company"]);
+            }}
             startAdornment={
               <InputAdornment position="start">
                 <IconButton aria-label="toggle" className="form_input--start">
@@ -103,12 +243,22 @@ const Form = ({ data }: any) => {
               </InputAdornment>
             }
           />
+          {!!errors.company?.message && (
+            <FormHelperText error id="accountId-error">
+              {errors.company?.message}
+            </FormHelperText>
+          )}
         </FormControl>
         <FormControl className="form_input" fullWidth variant="outlined">
           <OutlinedInput
             fullWidth
             id="outlined-adornment-password"
+            {...register("jobTitle")}
             placeholder={data.job}
+            onChange={async (e) => {
+              setValue("jobTitle", e.target.value);
+              await trigger(["jobTitle"]);
+            }}
             startAdornment={
               <InputAdornment position="start">
                 <IconButton aria-label="toggle" className="form_input--start">
@@ -125,12 +275,22 @@ const Form = ({ data }: any) => {
               </InputAdornment>
             }
           />
+          {!!errors.jobTitle?.message && (
+            <FormHelperText error id="accountId-error">
+              {errors.jobTitle?.message}
+            </FormHelperText>
+          )}
         </FormControl>
         <FormControl className="form_input" fullWidth variant="outlined">
           <OutlinedInput
             fullWidth
             id="outlined-adornment-password"
+            {...register("notes")}
             placeholder={data.notes}
+            onChange={async (e) => {
+              setValue("notes", e.target.value);
+              await trigger(["notes"]);
+            }}
             startAdornment={
               <InputAdornment position="start">
                 <IconButton aria-label="toggle" className="form_input--start">
@@ -147,12 +307,25 @@ const Form = ({ data }: any) => {
               </InputAdornment>
             }
           />
+          {!!errors.notes?.message && (
+            <FormHelperText error id="accountId-error">
+              {errors.notes?.message}
+            </FormHelperText>
+          )}
         </FormControl>
       </div>
       <p className="desc primary_text">{data.forom_tail}</p>
       <div className="acceptions">
         <div className="acceptions--item">
-          <FormControlLabel control={<Checkbox />} label="" />
+          <FormControlLabel
+            control={
+              <Checkbox
+                checked={privacySelected}
+                onClick={() => setPrivacySelected(!privacySelected)}
+              />
+            }
+            label=""
+          />
           <span
             className="acceptions--item--text"
             style={{
@@ -179,9 +352,12 @@ const Form = ({ data }: any) => {
           </span>
         </div>
       </div>
-      <Link href="" className="global_button submit_btn">
+      <Button
+        className="global_button submit_btn"
+        onClick={handleSubmit((data) => onSubmit(data))}
+      >
         {data.form_submition} {locale === "ar" ? <ArrowLeft /> : <ArrowRight />}
-      </Link>
+      </Button>
     </Container>
   );
 };

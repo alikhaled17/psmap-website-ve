@@ -20,7 +20,7 @@ export const FooterStrings: any = {
       },
       {
         text: "About",
-        route: "",
+        route: "/About",
       },
       {
         text: "Resources",
@@ -28,7 +28,7 @@ export const FooterStrings: any = {
       },
       {
         text: "Contact",
-        route: "",
+        route: "/Contact",
       },
       {
         text: "Join community",
@@ -58,7 +58,7 @@ export const FooterStrings: any = {
       },
       {
         text: "عنا",
-        route: "",
+        route: "/About",
       },
       {
         text: "الموارد",
@@ -66,7 +66,7 @@ export const FooterStrings: any = {
       },
       {
         text: "تواصل معنا",
-        route: "",
+        route: "/Contact",
       },
       {
         text: "مجتمعنا",

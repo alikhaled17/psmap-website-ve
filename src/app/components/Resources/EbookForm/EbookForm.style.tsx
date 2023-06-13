@@ -75,7 +75,7 @@ const Container = styled.section`
       justify-content: center;
       gap: 10px;
       flex-shrink: 0;
-      width: auto;
+      width: inherit;
       @media ${StyledTheme.media.laptop} {
         flex: 0 0 220px;
         margin: 0 0 0;

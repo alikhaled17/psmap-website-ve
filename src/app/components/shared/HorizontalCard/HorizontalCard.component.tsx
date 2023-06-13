@@ -2,10 +2,10 @@ import React from "react";
 import Container from "./HorizontalCard.style";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import factory_img from "@/app/assets/images/Home/factory.png";
 import useTranslation from "@/app/hooks/useTranslation";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "iconsax-react";
+import { FormType } from "@/app/interfaces/FormType.enum";
 
 type HorizontalCardProps = {
   direction?: boolean;
@@ -14,6 +14,7 @@ type HorizontalCardProps = {
   title?: string;
   hasBtn?: string;
   btnHref?: string;
+  btnHrefQuery?: FormType;
 };
 const HorizontalCard = ({
   direction = true,
@@ -22,6 +23,7 @@ const HorizontalCard = ({
   title = "",
   hasBtn = "",
   btnHref = "",
+  btnHrefQuery = FormType.Training,
 }: HorizontalCardProps) => {
   const { t, locale, setLocale } = useTranslation();
 
@@ -57,7 +59,13 @@ const HorizontalCard = ({
                   className="horizontal_card--content--btn"
                   style={{ justifyContent: "flex-start" }}
                 >
-                  <Link href={btnHref} className="global_button button">
+                  <Link
+                    href={{
+                      pathname: btnHref,
+                      query: { formType: btnHrefQuery },
+                    }}
+                    className="global_button button"
+                  >
                     {hasBtn}
                     {locale === "ar" ? <ArrowLeft /> : <ArrowRight />}
                   </Link>
@@ -67,7 +75,13 @@ const HorizontalCard = ({
                   className="horizontal_card--content--btn"
                   style={{ justifyContent: "flex-end" }}
                 >
-                  <Link href={btnHref} className="global_button button">
+                  <Link
+                    href={{
+                      pathname: btnHref,
+                      query: { formType: btnHrefQuery },
+                    }}
+                    className="global_button button"
+                  >
                     {locale === "ar" ? <ArrowLeft /> : <ArrowRight />}
                     {hasBtn}
                   </Link>

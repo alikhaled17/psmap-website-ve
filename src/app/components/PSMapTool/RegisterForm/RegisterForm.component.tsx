@@ -2,12 +2,14 @@
 import React from "react";
 import Container from "./RegisterForm.style";
 import { motion } from "framer-motion";
-import PricingCard from "../../shared/PricingCard/PricingCard.component";
 import useTranslation from "@/app/hooks/useTranslation";
 import Form from "../../shared/Forms/Form.component";
+import { useRouter } from "next/router";
 
 const RegisterForm = () => {
   const { t, locale, setLocale } = useTranslation();
+  const router = useRouter();
+  const { formType } = router.query;
 
   return (
     <Container>
@@ -30,7 +32,7 @@ const RegisterForm = () => {
             }}
           ></p>
 
-          <Form data={t("register_form").form} />
+          <Form data={t("register_form").form} formType={formType} />
         </motion.div>
       </div>
     </Container>
