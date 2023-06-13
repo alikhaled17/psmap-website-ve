@@ -9,10 +9,16 @@ export const LanguageProvider = ({
 }: {
   children: React.ReactNode;
 }) => {
-  const [locale, setLocale] = useState<"en" | "ar">("en");
+  const [locale, setLocale] = useState<"en" | "ar" | string>("en");
 
   useEffect(() => {
-    console.log(locale);
+    if (localStorage.getItem("psmap_lang")) {
+      setLocale(localStorage.getItem("psmap_lang") as string);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("psmap_lang", locale);
   }, [locale]);
 
   return (
