@@ -1,9 +1,8 @@
-import React from "react";
-import Container from "./PricingCard.style";
-import Link from "next/link";
-import { ArrowLeft, ArrowRight } from "iconsax-react";
+import CheckMark from "@/app/assets/images/PSMapTool/Checkmark.svg";
 import useTranslation from "@/app/hooks/useTranslation";
-import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import Image from "next/image";
+import Link from "next/link";
+import Container from "./PricingCard.style";
 
 const PricingCard = ({ data }: any) => {
   const { t, locale, setLocale } = useTranslation();
@@ -25,7 +24,7 @@ const PricingCard = ({ data }: any) => {
           <ul className="feature_list--items">
             {data.list.map((m: string) => (
               <li key={m}>
-                <CheckCircleIcon />
+                <Image src={CheckMark} alt="check mark" />
                 {m}
               </li>
             ))}

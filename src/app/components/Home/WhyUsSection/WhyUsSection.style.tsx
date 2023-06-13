@@ -39,7 +39,9 @@ const Container = styled.div`
       justify-content: space-between;
       align-items: center;
       margin-bottom: 40px;
+      gap: 220px;
       @media ${StyledTheme.media.laptop} {
+        gap: unset;
         flex-direction: column;
         justify-content: center;
         margin-bottom: 16px;
@@ -62,11 +64,9 @@ const Container = styled.div`
                 margin: 24px 0 0;
               }
             }
-            svg {
+            img {
               margin: 0 10px;
               color: ${StyledTheme.colors.primary};
-              border-radius: 50%;
-              background-color: #ff000050;
             }
           }
         }

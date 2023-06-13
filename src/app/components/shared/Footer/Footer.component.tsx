@@ -9,8 +9,11 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import Link from "next/link";
 import { Youtube, Call, Sms, Whatsapp } from "iconsax-react";
 import GoogleIcon from "@mui/icons-material/Google";
+import useTranslation from "@/app/hooks/useTranslation";
 
 const Footer = () => {
+  const { t, locale, setLocale } = useTranslation();
+
   return (
     <Container>
       <div className="warped_container">
@@ -27,13 +30,9 @@ const Footer = () => {
           <div className="footer--body">
             <div className="content">
               <Image src={psmapLogo} alt="psmap_logo" className="psmap_logo" />
-              <p className="content--desc">
-                PSmap is a cutting-edge collaborative <br /> problem-solving
-                tool that connects departments to <br /> improve collaboration
-                and efficiency.
-              </p>
+              <p className="content--desc">{t("footer").about_psmap}</p>
               <div className="content--icons">
-                <p className="primary_text">Follow us on</p>
+                <p className="primary_text">{t("footer").follow_us}</p>
                 <div className="content--icons_list">
                   <Link
                     href="https://network.psmap.io/"
@@ -67,46 +66,20 @@ const Footer = () => {
               </div>
             </div>
             <div className="links">
-              <span className="primary_text links--label">Company</span>
-              <span className="primary_text">
-                <Link href="/" className="links--route">
-                  Home
-                </Link>
+              <span className="primary_text links--label">
+                {t("footer").links_label}
               </span>
-              <span className="primary_text">
-                <Link href="PSMapTool" className="links--route">
-                  PSMap Tool
-                </Link>
-              </span>
-              <span className="primary_text">
-                <Link href="" className="links--route">
-                  Training
-                </Link>
-              </span>
-              <span className="primary_text">
-                <Link href="" className="links--route">
-                  About
-                </Link>
-              </span>
-              <span className="primary_text">
-                <Link href="/Resources" className="links--route">
-                  Resources
-                </Link>
-              </span>
-              <span className="primary_text">
-                <Link href="" className="links--route">
-                  Contact
-                </Link>
-              </span>
-              <span className="primary_text">
-                <Link href="/Community" className="links--route">
-                  Join community
-                </Link>
-              </span>
+              {t("footer").items.map((m: any, i: number) => (
+                <span key={i} className="primary_text">
+                  <Link href={m.route} className="links--route">
+                    {m.text}
+                  </Link>
+                </span>
+              ))}
             </div>
             <div className="contacts">
               <span className="primary_text contacts--label">
-                Contact PSMap
+                {t("footer").contacts_label}
               </span>
               <span className="primary_text contacts--item">
                 <Call variant="Bold" />
@@ -123,9 +96,7 @@ const Footer = () => {
             </div>
           </div>
           <div className="footer--tail">
-            <span className="copyrights">
-              Copyright © 2023 PSMap. All rights reserved
-            </span>
+            <span className="copyrights">{t("footer").copyrights}</span>
           </div>
         </motion.div>
       </div>

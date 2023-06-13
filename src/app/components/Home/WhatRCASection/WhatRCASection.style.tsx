@@ -1,5 +1,6 @@
 import { StyledTheme } from "@/app/core/theme/StyledTheme";
 import styled from "styled-components";
+import VideoPlayerBg from "@/app/assets/images/Home/video_player.png";
 
 const Container = styled.div`
   min-height: 90vh;
@@ -28,9 +29,12 @@ const Container = styled.div`
       }
     }
     &--video {
-      background-image: linear-gradient(#271717 40%, #5a0f00, #d02100);
+      background: url(${VideoPlayerBg.src});
+      background-repeat: no-repeat;
+      background-size: cover;
+
       width: 85vw;
-      height: 600px;
+      height: 650px;
       padding: 24px 86px;
       background-color: red;
       display: flex;

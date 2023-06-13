@@ -35,7 +35,7 @@ const PSMapToolHeroSection = () => {
             {t("psmaptool_hero").desc[1]}
           </p>
           <Link
-            href=""
+            href="/PSMapTool/register"
             className="global_button PSMapTool_HeroSection--trial_btn"
           >
             {t("psmaptool_hero").trial_btn}

@@ -4,6 +4,7 @@ import { TrainingHeroStrings } from "./Training/training_hero_section";
 import { TrainingRcaStrings } from "./Training/training_rca_section";
 import { CommunityAboutStrings } from "./community_data/community_about_section";
 import { CommunityHeroStrings } from "./community_data/community_hero_section";
+import { FooterStrings } from "./global_data/footer";
 import { NavStrings } from "./global_data/navigation";
 import { AboutStrings } from "./home_data/about_section";
 import { FactoryStrings } from "./home_data/factory_section";
@@ -22,6 +23,7 @@ import { ResourcesHeroStrings } from "./resources_data/resources_hero_section";
 export const LangStrings: any = {
   en: {
     nav: NavStrings.en,
+    footer: FooterStrings.en,
     // HOME PAGE
     hero: HeroStrings.en,
     factory: FactoryStrings.en,
@@ -50,6 +52,7 @@ export const LangStrings: any = {
   },
   ar: {
     nav: NavStrings.ar,
+    footer: FooterStrings.ar,
     // HOME PAGE
     hero: HeroStrings.ar,
     factory: FactoryStrings.ar,

@@ -39,7 +39,9 @@ const Container = styled.div`
           line-height: 28px;
           font-weight: lighter;
           margin-bottom: 24px;
+          width: 400px;
           @media ${StyledTheme.media.laptop} {
+            width: unset;
             font-size: 16px;
             line-height: 22px;
           }
@@ -123,11 +125,13 @@ const Container = styled.div`
           svg {
             color: ${StyledTheme.colors.primary};
           }
-          min-width: 150px;
-          margin: 0 auto;
-          small {
-            flex-grow: 1;
-            text-align: center;
+          @media ${StyledTheme.media.laptop} {
+            min-width: 150px;
+            margin: 0 auto;
+            small {
+              flex-grow: 1;
+              text-align: center;
+            }
           }
         }
       }

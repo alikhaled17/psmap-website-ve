@@ -1,10 +1,11 @@
+import CheckMark from "@/app/assets/images/Home/Checkmark.svg";
 import useTranslation from "@/app/hooks/useTranslation";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import { motion } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "iconsax-react";
+import Image from "next/image";
 import Link from "next/link";
-import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import Container from "./WhyUsSection.style";
-
 const WhyUsSection = () => {
   const { t, locale, setLocale } = useTranslation();
 
@@ -41,7 +42,7 @@ const WhyUsSection = () => {
                   .list.slice(0, 4)
                   .map((item: string, i: number) => (
                     <li key={i}>
-                      <CheckCircleIcon />
+                      <Image src={CheckMark} alt="check mark" />
                       {item}
                     </li>
                   ))}
@@ -53,7 +54,7 @@ const WhyUsSection = () => {
                   .list.slice(4, 8)
                   .map((item: string, i: number) => (
                     <li key={i}>
-                      <CheckCircleIcon />
+                      <Image src={CheckMark} alt="check mark" />
                       {item}
                     </li>
                   ))}
@@ -66,7 +67,7 @@ const WhyUsSection = () => {
               __html: t("why_us").tail,
             }}
           ></p>
-          <Link href="" className="global_button why_us--trial_btn">
+          <Link href="/PSMapTool" className="global_button why_us--trial_btn">
             {t("why_us").btn}
             {locale === "ar" ? <ArrowLeft /> : <ArrowRight />}
           </Link>

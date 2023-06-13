@@ -9,6 +9,7 @@ const Container = styled.div`
   min-height: 120vh;
   border-radius: 8px;
   @media ${StyledTheme.media.laptop} {
+    min-height: unset;
     min-width: unset;
     width: unset;
   }
@@ -82,6 +83,7 @@ const Container = styled.div`
         list-style: none;
         margin: 0;
         padding: 0;
+        margin-bottom: 16px;
         li {
           display: flex;
           align-items: center;
@@ -90,11 +92,9 @@ const Container = styled.div`
           @media ${StyledTheme.media.laptop} {
             font-size: 14px;
           }
-          svg {
+          img {
             margin: 0 10px;
             color: #fff;
-            border-radius: 50%;
-            background-color: #ffffff50;
           }
         }
       }

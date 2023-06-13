@@ -3,6 +3,6 @@ export const WhatRcaStrings: any = {
     title: `What's RCA?`,
   },
   ar: {
-    title: `ما هو RCA؟`,
+    title: `ما هو تحليل السبب الجذري ؟`,
   },
 };

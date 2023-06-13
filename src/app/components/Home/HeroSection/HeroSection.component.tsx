@@ -42,7 +42,7 @@ const HeroSection = () => {
             ></p>
             <div className="info_section--trial ">
               <Link
-                href=""
+                href="/PSMapTool"
                 className="global_button info_section--trial--trial_btn"
               >
                 {t("hero").trial_btn}
