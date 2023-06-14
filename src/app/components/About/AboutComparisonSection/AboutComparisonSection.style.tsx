@@ -17,6 +17,9 @@ const Container = styled.div`
     justify-content: center;
     align-items: center;
     min-height: 80vh;
+    @media ${StyledTheme.media.laptop} {
+      min-height: unset;
+    }
     .MuiPaper-rounded {
       overflow: hidden;
     }

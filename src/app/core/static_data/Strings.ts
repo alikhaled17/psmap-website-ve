@@ -25,6 +25,8 @@ import { PsmapToolPricingStrings } from "./psmaptool_data/psmaptool_pricing_sect
 import { RegisterStrings } from "./psmaptool_data/register_section";
 import { EBookStrings } from "./resources_data/register_section";
 import { ResourcesHeroStrings } from "./resources_data/resources_hero_section";
+import { AboutMethodologyStrings } from "./about_data/about_methodology_section";
+import { AboutChallengeStrings } from "./about_data/about_challenge_section";
 
 export const LangStrings: any = {
   en: {
@@ -59,7 +61,9 @@ export const LangStrings: any = {
     // ABOUT PAGE
     about_hero: AboutHeroStrings.en,
     about_vision: AboutVisionStrings.en,
+    about_methodology: AboutMethodologyStrings.en,
     about_comparison: AboutComparisonStrings.en,
+    about_challenge: AboutChallengeStrings.en,
     // CONTACT PAGE
     success_popup: SuccessPopupStrings.en,
     contact_hero: ContactHeroSectionStrings.en,
@@ -96,7 +100,9 @@ export const LangStrings: any = {
     // ABOUT PAGE
     about_hero: AboutHeroStrings.ar,
     about_vision: AboutVisionStrings.ar,
+    about_methodology: AboutMethodologyStrings.ar,
     about_comparison: AboutComparisonStrings.ar,
+    about_challenge: AboutChallengeStrings.ar,
     // CONTACT PAGE
     success_popup: SuccessPopupStrings.ar,
     contact_hero: ContactHeroSectionStrings.ar,

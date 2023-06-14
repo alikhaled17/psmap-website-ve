@@ -1,8 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   experimental: {
-    appDir: true,
+    appDir: false,
   },
+  output: 'standalone',
   i18n: {
     locales: ["en-US", "ar-SA"],
     defaultLocale: "en-US",

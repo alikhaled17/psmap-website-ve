@@ -19,6 +19,7 @@ import { Button, FormHelperText } from "@mui/material";
 import { submitForm } from "@/app/store/reducers/form-reducers/FormStore";
 import { useEffect, useState } from "react";
 import SuccessPopup from "../SuccessPopup/SuccessPopup.component";
+import { StyledTheme } from "@/app/core/theme/StyledTheme";
 
 const Form = ({ data, formType }: any) => {
   const dispatch = useDispatch();
@@ -65,6 +66,7 @@ const Form = ({ data, formType }: any) => {
     watch,
     reset,
     setValue,
+    getValues,
     trigger,
     formState: { errors, isSubmitSuccessful },
   } = useForm<FormInput>({
@@ -87,36 +89,54 @@ const Form = ({ data, formType }: any) => {
 
   watch(["fullName", "email", "phoneNumber", "company", "jobTitle", "notes"]);
 
-  const onSubmit = (data: FormInput) => {
-    if (privacySelected) {
-      const body: FormInput = {
-        fullName: data.fullName,
-        email: data.email,
-        phoneNumber: data.phoneNumber,
-        company:
-          data.company?.trim() === "" || data.company?.trim() === undefined
-            ? null
-            : data.company?.trim(),
-        jobTitle:
-          data.jobTitle?.trim() === "" || data.jobTitle?.trim() === undefined
-            ? null
-            : data.jobTitle?.trim(),
-        notes:
-          data.notes?.trim() === "" || data.notes?.trim() === undefined
-            ? null
-            : data.notes?.trim(),
-      };
+  useEffect(() => {
+    reset({
+      fullName: "",
+      email: "",
+      phoneNumber: "",
+      company: "",
+      jobTitle: "",
+      notes: "",
+    });
+  }, [locale, reset]);
 
-      dispatch(submitForm({ body, formType }))
-        .then(() => {
-          reset({ ...defaultValues });
-          setPrivacySelected(false);
-          setSuccessPopup(true);
-        })
-        .catch((err: any) => console.log("err", err));
-    } else {
-      alert("error");
+  const onSubmit = (data: FormInput) => {
+    const body: FormInput = {
+      fullName: data.fullName,
+      email: data.email,
+      phoneNumber: data.phoneNumber,
+      company:
+        data.company?.trim() === "" || data.company?.trim() === undefined
+          ? null
+          : data.company?.trim(),
+      jobTitle:
+        data.jobTitle?.trim() === "" || data.jobTitle?.trim() === undefined
+          ? null
+          : data.jobTitle?.trim(),
+      notes:
+        data.notes?.trim() === "" || data.notes?.trim() === undefined
+          ? null
+          : data.notes?.trim(),
+    };
+
+    dispatch(submitForm({ body, formType }))
+      .then(() => {
+        reset({ ...defaultValues });
+        setPrivacySelected(false);
+        setSuccessPopup(true);
+      })
+      .catch((err: any) => console.log("err", err));
+  };
+
+  const isDisabled = () => {
+    const fullName = getValues("fullName");
+    const email = getValues("email");
+    const phoneNumber = getValues("phoneNumber");
+
+    if (privacySelected && fullName && email && phoneNumber) {
+      return false;
     }
+    return true;
   };
 
   return (
@@ -150,7 +170,7 @@ const Form = ({ data, formType }: any) => {
             }
           />
           {!!errors.fullName?.message && (
-            <FormHelperText error id="accountId-error">
+            <FormHelperText error className="error-message">
               {errors.fullName?.message}
             </FormHelperText>
           )}
@@ -181,7 +201,7 @@ const Form = ({ data, formType }: any) => {
             }
           />
           {!!errors.email?.message && (
-            <FormHelperText error id="accountId-error">
+            <FormHelperText error className="error-message">
               {errors.email?.message}
             </FormHelperText>
           )}
@@ -212,7 +232,7 @@ const Form = ({ data, formType }: any) => {
             }
           />
           {!!errors.phoneNumber?.message && (
-            <FormHelperText error id="accountId-error">
+            <FormHelperText error className="error-message">
               {errors.phoneNumber?.message}
             </FormHelperText>
           )}
@@ -244,7 +264,7 @@ const Form = ({ data, formType }: any) => {
             }
           />
           {!!errors.company?.message && (
-            <FormHelperText error id="accountId-error">
+            <FormHelperText error className="error-message">
               {errors.company?.message}
             </FormHelperText>
           )}
@@ -276,7 +296,7 @@ const Form = ({ data, formType }: any) => {
             }
           />
           {!!errors.jobTitle?.message && (
-            <FormHelperText error id="accountId-error">
+            <FormHelperText error className="error-message">
               {errors.jobTitle?.message}
             </FormHelperText>
           )}
@@ -308,7 +328,7 @@ const Form = ({ data, formType }: any) => {
             }
           />
           {!!errors.notes?.message && (
-            <FormHelperText error id="accountId-error">
+            <FormHelperText error className="error-message">
               {errors.notes?.message}
             </FormHelperText>
           )}
@@ -354,6 +374,12 @@ const Form = ({ data, formType }: any) => {
       </div>
       <Button
         className="global_button submit_btn"
+        disabled={isDisabled()}
+        style={{
+          backgroundColor: isDisabled()
+            ? StyledTheme.colors.disabledBackground
+            : StyledTheme.colors.primary,
+        }}
         onClick={handleSubmit((data) => onSubmit(data))}
       >
         {data.form_submition} {locale === "ar" ? <ArrowLeft /> : <ArrowRight />}

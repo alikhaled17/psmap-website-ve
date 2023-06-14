@@ -1,4 +1,7 @@
-node_modules
-.git
+node_modules/
+.next/  
+.git/
 .gitignore
 .env
+.dockerignore
+Dockerfile

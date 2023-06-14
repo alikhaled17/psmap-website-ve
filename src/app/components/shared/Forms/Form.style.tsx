@@ -42,6 +42,9 @@ const Container = styled.div`
       font-weight: bold;
       margin-top: 6px;
     }
+    .error-message {
+      text-align: inherit;
+    }
   }
 
   .acceptions {

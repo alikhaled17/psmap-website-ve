@@ -7,6 +7,7 @@ export const StyledTheme = {
     primaryLight: "#ffad9f",
     primaryBackground: "#f8f8f9",
     secondaryBackground: "#818e94a8",
+    disabledBackground: "#CACACA",
     primaryFont: "#000000",
     secondaryFont: "#818e94",
   },

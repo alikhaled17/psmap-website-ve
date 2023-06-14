@@ -30,7 +30,7 @@ export const EBookStrings: any = {
       form_privacy: ["أوافق على ", "سياسة الخصوصية"],
       form_recieve_updates:
         "أوافق على تلقي الأخبار والتحديثات عن طريق البريد الإلكتروني",
-      form_submition: "تقديم",
+      form_submition: "إرسال",
     },
   },
 };

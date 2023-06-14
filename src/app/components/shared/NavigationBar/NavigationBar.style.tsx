@@ -18,7 +18,7 @@ const Container = styled.div`
       justify-content: flex-start;
       align-items: center;
       gap: 4em;
-      padding: 30px 0;
+      padding: 20px 0;
 
       &--logo {
         img {
