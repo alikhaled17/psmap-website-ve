@@ -5,14 +5,14 @@ const Container = styled.div`
   .star_img {
     position: relative;
     width: fit-content;
-    @media ${StyledTheme.media.laptop} {
+    @media ${StyledTheme.media.tablet} {
       width: unset;
     }
     &--l_star_img,
     &--r_star_img,
     &--dots_img {
       position: absolute;
-      @media ${StyledTheme.media.laptop} {
+      @media ${StyledTheme.media.tablet} {
         scale: 0.8;
       }
     }
@@ -31,7 +31,7 @@ const Container = styled.div`
 
     &--main_img {
       border-radius: 8px;
-      @media ${StyledTheme.media.laptop} {
+      @media ${StyledTheme.media.tablet} {
         width: 100%;
         height: auto;
       }

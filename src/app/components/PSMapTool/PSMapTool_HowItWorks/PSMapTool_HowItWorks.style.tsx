@@ -2,7 +2,7 @@ import { StyledTheme } from "@/app/core/theme/StyledTheme";
 import styled from "styled-components";
 
 const Container = styled.div`
-  @media ${StyledTheme.media.laptop} {
+  @media ${StyledTheme.media.tablet} {
     .warped_container {
       margin: 0;
     }
@@ -18,6 +18,9 @@ const Container = styled.div`
       font-size: 32px;
       line-height: 40px;
       @media ${StyledTheme.media.laptop} {
+        font-size: 24px;
+      }
+      @media ${StyledTheme.media.tablet} {
         background-color: #eeeeee;
         margin-bottom: unset;
         margin-top: unset;
@@ -34,7 +37,7 @@ const Container = styled.div`
     padding: 24px 16px;
     background-color: #eeeeee;
     border-radius: 8px;
-    @media ${StyledTheme.media.laptop} {
+    @media ${StyledTheme.media.tablet} {
       padding: 24px 16px;
       border-radius: 0;
     }
@@ -46,14 +49,14 @@ const Container = styled.div`
       gap: 70px;
       align-items: stretch;
 
-      @media ${StyledTheme.media.laptop} {
+      @media ${StyledTheme.media.tablet} {
         gap: 16px;
         flex-wrap: wrap;
       }
       &_image {
         width: 45%;
         padding-bottom: 40px;
-        @media ${StyledTheme.media.laptop} {
+        @media ${StyledTheme.media.tablet} {
           display: none;
         }
         img {
@@ -92,7 +95,7 @@ const Container = styled.div`
       }
       &_content {
         width: 45%;
-        @media ${StyledTheme.media.laptop} {
+        @media ${StyledTheme.media.tablet} {
           width: 85%;
         }
         &--title {
@@ -101,6 +104,10 @@ const Container = styled.div`
           font-weight: 600;
           margin-bottom: 16px;
           @media ${StyledTheme.media.laptop} {
+            font-size: 22px;
+            margin-bottom: 10px;
+          }
+          @media ${StyledTheme.media.tablet} {
             font-size: 16px;
             margin-bottom: 8px;
             font-weight: 800;
@@ -108,14 +115,14 @@ const Container = styled.div`
         }
         &--desc {
           font-size: 16px;
-          @media ${StyledTheme.media.laptop} {
+          @media ${StyledTheme.media.tablet} {
             font-size: 14px;
           }
         }
         .mobile_image {
           display: none;
           padding: 16px 0 32px;
-          @media ${StyledTheme.media.laptop} {
+          @media ${StyledTheme.media.tablet} {
             display: unset;
           }
           img {
@@ -137,7 +144,7 @@ const Container = styled.div`
       .item_image {
         order: 3;
       }
-      @media ${StyledTheme.media.laptop} {
+      @media ${StyledTheme.media.tablet} {
         .item_content {
           order: 2;
         }
@@ -150,7 +157,7 @@ const Container = styled.div`
       }
     }
     .item {
-      @media ${StyledTheme.media.laptop} {
+      @media ${StyledTheme.media.tablet} {
         .item_content {
           order: 2;
         }

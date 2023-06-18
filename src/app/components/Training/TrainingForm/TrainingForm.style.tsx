@@ -5,7 +5,7 @@ const Container = styled.div`
   padding-top: 130px;
   display: flex;
   justify-content: center;
-  @media ${StyledTheme.media.laptop} {
+  @media ${StyledTheme.media.tablet} {
     padding-top: 80px;
   }
   .register_form {
@@ -23,7 +23,7 @@ const Container = styled.div`
       text-align: center;
       color: #2f354d;
       max-width: 790px;
-      @media ${StyledTheme.media.laptop} {
+      @media ${StyledTheme.media.tablet} {
         max-width: unset;
         font-size: 18px;
         line-height: 26px;
@@ -35,7 +35,7 @@ const Container = styled.div`
       margin-bottom: 32px;
       text-align: center;
       line-height: 24px;
-      @media ${StyledTheme.media.laptop} {
+      @media ${StyledTheme.media.tablet} {
         font-size: 14px;
         line-height: 22px;
       }
@@ -47,7 +47,7 @@ const Container = styled.div`
       color: ${StyledTheme.colors.primary};
       margin-bottom: 24px;
       text-align: center;
-      @media ${StyledTheme.media.laptop} {
+      @media ${StyledTheme.media.tablet} {
         font-size: 24px;
       }
     }

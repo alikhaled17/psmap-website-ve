@@ -3,23 +3,28 @@ import styled from "styled-components";
 
 const Container = styled.div`
   padding: 40px 0 128px;
-  @media ${StyledTheme.media.laptop} {
+  @media ${StyledTheme.media.tablet} {
     padding: 0 0 48px;
   }
   .main_title {
     font-weight: bold;
     font-size: 32px;
     margin-bottom: 24px;
+    @media ${StyledTheme.media.laptop} {
+      font-size: 24px;
+    }
   }
   .about_section {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     gap: 5%;
+
     @media ${StyledTheme.media.laptop} {
       gap: 24px;
       padding-top: 24px;
       flex-direction: column;
+      align-items: center;
     }
     &--content {
       width: 50%;
@@ -48,6 +53,7 @@ const Container = styled.div`
     &--image {
       @media ${StyledTheme.media.laptop} {
         width: 100%;
+        display: contents;
       }
     }
 
@@ -72,6 +78,9 @@ const Container = styled.div`
           font-size: 18px;
           margin-bottom: 16px;
           @media ${StyledTheme.media.laptop} {
+            font-size: 16px;
+          }
+          @media ${StyledTheme.media.tablet} {
             margin-bottom: 8px;
           }
         }

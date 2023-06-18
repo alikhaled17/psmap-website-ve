@@ -7,7 +7,7 @@ const Container = styled.div`
   z-index: 9;
   background-color: #fff;
   .desktop_nav {
-    @media ${StyledTheme.media.laptop} {
+    @media ${StyledTheme.media.tablet} {
       display: none;
     }
     display: flex;
@@ -19,10 +19,18 @@ const Container = styled.div`
       align-items: center;
       gap: 4em;
       padding: 20px 0;
+      @media ${StyledTheme.media.laptop} {
+        gap: 2em;
+      }
 
       &--logo {
+        display: flex;
+        align-items: center;
         img {
           width: 160px;
+          @media ${StyledTheme.media.laptop} {
+            width: 100px;
+          }
         }
       }
 
@@ -40,6 +48,9 @@ const Container = styled.div`
           /* min-width: 60px; */
           &--text {
             color: ${StyledTheme.colors.secondaryFont};
+            @media ${StyledTheme.media.laptop} {
+              font-size: 14px;
+            }
             cursor: pointer;
             &.active,
             &:hover {
@@ -57,6 +68,9 @@ const Container = styled.div`
       align-items: center;
       justify-content: flex-end;
       gap: 20px;
+      svg {
+        margin-top: 10px;
+      }
       &--join_btn {
         flex: auto;
         background-color: ${StyledTheme.colors.primary};
@@ -68,7 +82,7 @@ const Container = styled.div`
   }
   .tablet_nav {
     display: none;
-    @media ${StyledTheme.media.laptop} {
+    @media ${StyledTheme.media.tablet} {
       display: block;
     }
     &--main {
@@ -83,6 +97,7 @@ const Container = styled.div`
       }
       &--menu_icon {
         cursor: pointer;
+        margin: 0 16px;
         svg {
           font-size: 30px;
         }

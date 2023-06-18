@@ -9,7 +9,7 @@ const Container = styled.div`
   background-position: center;
   background-repeat: no-repeat;
 
-  @media ${StyledTheme.media.laptop} {
+  @media ${StyledTheme.media.tablet} {
     background: unset;
   }
 
@@ -23,6 +23,9 @@ const Container = styled.div`
     text-align: center;
     @media ${StyledTheme.media.laptop} {
       height: auto;
+    }
+    @media ${StyledTheme.media.tablet} {
+      height: auto;
       padding-top: 24px;
       padding-bottom: 16px;
     }
@@ -35,6 +38,11 @@ const Container = styled.div`
       max-width: 550px;
       line-height: 48px;
       @media ${StyledTheme.media.laptop} {
+        line-height: 34px;
+        margin-bottom: 20px;
+        font-size: 24px;
+      }
+      @media ${StyledTheme.media.tablet} {
         font-size: 18px;
         line-height: 32px !important;
         max-width: 343px;
@@ -48,6 +56,9 @@ const Container = styled.div`
       max-width: 550px;
       color: #818e94;
       @media ${StyledTheme.media.laptop} {
+        margin-bottom: 24px;
+      }
+      @media ${StyledTheme.media.tablet} {
         font-size: 14px;
         max-width: 343px;
         width: unset;
@@ -61,15 +72,22 @@ const Container = styled.div`
       gap: 20px;
       flex-wrap: wrap;
       @media ${StyledTheme.media.laptop} {
+        width: 90%;
+      }
+      @media ${StyledTheme.media.tablet} {
         justify-content: center;
         margin-top: 24px;
       }
       img {
-        width: 295px;
+        width: 22%;
+        height: auto;
         border-radius: 8px;
 
         &:nth-child(even) {
           margin-top: 150px;
+          @media ${StyledTheme.media.laptop} {
+            margin-top: 100px;
+          }
         }
         &.ar {
           &:nth-child(even) {
@@ -77,10 +95,13 @@ const Container = styled.div`
           }
           &:nth-child(odd) {
             margin-top: 150px;
+            @media ${StyledTheme.media.laptop} {
+              margin-top: 100px;
+            }
           }
         }
 
-        @media ${StyledTheme.media.laptop} {
+        @media ${StyledTheme.media.tablet} {
           margin-top: unset !important;
           width: 162px;
           height: auto;

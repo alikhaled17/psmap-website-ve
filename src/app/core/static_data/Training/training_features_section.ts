@@ -4,13 +4,13 @@ export const TrainingFeaturesStrings: any = {
       {
         title: "On-Site training",
         desc: `Our experienced trainers will come to your location to provide personalized, hands-on training, We offer both public and private courses.`,
-        btnText: "Start Your RCA Training",
+        btnText: "Start Your RCA Training Today",
         img: "",
       },
       {
         title: "Online Training",
         desc: `Learn at your own pace with our online courses, Our courses include interactive modules, quizzes, and assessments to help you retain the information.`,
-        btnText: "Start Your RCA Training",
+        btnText: "Start Your RCA Training Today",
         img: "",
       },
     ],
@@ -24,7 +24,7 @@ export const TrainingFeaturesStrings: any = {
         img: "",
       },
       {
-        title: "لا تدع نشاط العملية يربكك",
+        title: "التدريب عبر الانترنت",
         desc: `تعلم بالوتيرة التي تناسبك من خلال دوراتنا المتاحة عبر الإنترنت, تشمل دوراتنا التدريبية وحدات تفاعلية واختبارات وتقييمات لمساعدتك على الاحتفاظ المعلومات.`,
         btnText: "ابدأ التدريب على تحليل السبب الجذري اليوم",
         img: "",

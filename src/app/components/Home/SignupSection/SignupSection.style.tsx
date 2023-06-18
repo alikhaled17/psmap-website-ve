@@ -11,7 +11,7 @@ const Container = styled.div`
     justify-content: center;
     padding: 40px 0;
     width: 100%;
-    @media ${StyledTheme.media.laptop} {
+    @media ${StyledTheme.media.tablet} {
       padding: 16px 0;
     }
     &--title {
@@ -22,6 +22,10 @@ const Container = styled.div`
       text-align: center;
       color: #2f354d;
       @media ${StyledTheme.media.laptop} {
+        font-size: 20px;
+        margin-bottom: 16px;
+      }
+      @media ${StyledTheme.media.tablet} {
         font-size: 18px;
         line-height: 26px;
       }
@@ -32,7 +36,7 @@ const Container = styled.div`
       margin-bottom: 32px;
       text-align: center;
       line-height: 24px;
-      @media ${StyledTheme.media.laptop} {
+      @media ${StyledTheme.media.tablet} {
         font-size: 14px;
         line-height: 22px;
       }
@@ -45,6 +49,10 @@ const Container = styled.div`
       margin-bottom: 24px;
       text-align: center;
       @media ${StyledTheme.media.laptop} {
+        font-size: 24px;
+        margin-bottom: 16px;
+      }
+      @media ${StyledTheme.media.tablet} {
         font-size: 24px;
       }
     }

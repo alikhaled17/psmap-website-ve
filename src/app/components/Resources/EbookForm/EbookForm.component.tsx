@@ -82,6 +82,20 @@ function EbookForm({ data, setIsEbookForm, formType }: any): JSX.Element {
 
   watch(["fullName", "email", "company", "jobTitle"]);
 
+  const onButtonClick = () => {
+    // using Java Script method to get PDF file
+    fetch("PSMapGuide.pdf").then((response) => {
+      response.blob().then((blob) => {
+        // Creating new object of PDF file
+        const fileURL = window.URL.createObjectURL(blob);
+        let alink = document.createElement("a");
+        alink.href = fileURL;
+        alink.download = "PSMapGuide.pdf";
+        alink.click();
+      });
+    });
+  };
+
   const onSubmit = (data: EBookFormInput) => {
     const body: EBookFormInput = {
       fullName: data.fullName,
@@ -102,7 +116,7 @@ function EbookForm({ data, setIsEbookForm, formType }: any): JSX.Element {
       .then(() => {
         reset({ ...defaultValues });
         setIsEbookForm(false);
-        //TODO: download e-book
+        onButtonClick();
       })
       .catch((err: any) => console.log("err", err));
   };

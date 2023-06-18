@@ -8,7 +8,7 @@ const Container = styled.div`
     align-items: center;
     align-items: center;
     padding: 32px 0;
-    @media ${StyledTheme.media.laptop} {
+    @media ${StyledTheme.media.tablet} {
       padding: 48px 0 24px;
       flex-direction: column;
       gap: 16px;
@@ -22,6 +22,11 @@ const Container = styled.div`
       max-width: 550px;
       line-height: 48px;
       @media ${StyledTheme.media.laptop} {
+        font-size: 24px;
+        line-height: 34px;
+        margin-bottom: 20px;
+      }
+      @media ${StyledTheme.media.tablet} {
         font-size: 18px;
         line-height: 32px !important;
         max-width: 343px;
@@ -34,17 +39,25 @@ const Container = styled.div`
       align-items: center;
       gap: 200px;
       @media ${StyledTheme.media.laptop} {
+        gap: 50px;
+      }
+      @media ${StyledTheme.media.tablet} {
         gap: 24px;
         flex-direction: column-reverse;
         padding: 16px;
       }
       .content {
+        flex-grow: 0;
+        width: 50%;
+        @media ${StyledTheme.media.tablet} {
+          width: 100%;
+        }
         &--list {
           list-style: none;
           display: flex;
           flex-direction: column;
           gap: 24px;
-          @media ${StyledTheme.media.laptop} {
+          @media ${StyledTheme.media.tablet} {
             gap: 16px;
           }
           &--item {
@@ -63,12 +76,19 @@ const Container = styled.div`
         }
       }
       .main_image {
+        width: 50%;
         @media ${StyledTheme.media.laptop} {
+          width: 40%;
+        }
+        @media ${StyledTheme.media.tablet} {
           width: unset;
         }
         img {
           height: auto;
           @media ${StyledTheme.media.laptop} {
+            width: 100%;
+          }
+          @media ${StyledTheme.media.tablet} {
             width: 88vw;
           }
         }

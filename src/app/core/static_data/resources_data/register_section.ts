@@ -2,7 +2,7 @@ export const EBookStrings: any = {
   en: {
     form: {
       title: `Download E-book`,
-      desc: `Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit .....`,
+      desc: ``,
       name: "Full Name",
       email: "Email",
       phone: "Phone number",
@@ -18,8 +18,8 @@ export const EBookStrings: any = {
   },
   ar: {
     form: {
-      title: `Download E-book`,
-      desc: `Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit .....`,
+      title: `تنزيل الكتاب الإلكتروني`,
+      desc: ``,
       name: "الاسم الكامل",
       email: "البريد الإلكتروني للشركة ",
       phone: "رقم التليفون",

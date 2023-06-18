@@ -120,10 +120,12 @@ const Form = ({ data, formType }: any) => {
     };
 
     dispatch(submitForm({ body, formType }))
-      .then(() => {
-        reset({ ...defaultValues });
-        setPrivacySelected(false);
-        setSuccessPopup(true);
+      .then((res: any) => {
+        if (res.payload === "Form is valid.") {
+          reset({ ...defaultValues });
+          setPrivacySelected(false);
+          setSuccessPopup(true);
+        }
       })
       .catch((err: any) => console.log("err", err));
   };

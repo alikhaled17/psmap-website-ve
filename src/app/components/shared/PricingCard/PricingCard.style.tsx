@@ -10,7 +10,11 @@ const Container = styled.div`
   border-radius: 8px;
   @media ${StyledTheme.media.laptop} {
     min-height: unset;
+  }
+  @media ${StyledTheme.media.tablet} {
+    min-height: unset;
     min-width: unset;
+    max-width: 440px;
     width: unset;
   }
   .pricing_card {
@@ -20,7 +24,7 @@ const Container = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    @media ${StyledTheme.media.laptop} {
+    @media ${StyledTheme.media.tablet} {
       padding: 24px 16px;
     }
     &--label {
@@ -37,8 +41,10 @@ const Container = styled.div`
       font-size: 32px;
       font-weight: 600;
       text-align: center;
-
       @media ${StyledTheme.media.laptop} {
+        font-size: 24px;
+      }
+      @media ${StyledTheme.media.tablet} {
         font-size: 24px;
       }
     }
@@ -48,7 +54,7 @@ const Container = styled.div`
       margin: 32px 0 48px;
       text-align: center;
 
-      @media ${StyledTheme.media.laptop} {
+      @media ${StyledTheme.media.tablet} {
         margin: 24px 0;
       }
     }
@@ -75,7 +81,7 @@ const Container = styled.div`
       &--header {
         font-size: 18px;
         margin-bottom: 24px;
-        @media ${StyledTheme.media.laptop} {
+        @media ${StyledTheme.media.tablet} {
           font-size: 16px;
         }
       }
@@ -89,7 +95,7 @@ const Container = styled.div`
           align-items: center;
           margin: 24px 15px 0 0;
           font-size: 16px;
-          @media ${StyledTheme.media.laptop} {
+          @media ${StyledTheme.media.tablet} {
             font-size: 14px;
           }
           img {

@@ -21,7 +21,7 @@ const Container = styled.section`
     margin-bottom: 24px;
     width: 470px;
     position: relative;
-    @media ${StyledTheme.media.laptop} {
+    @media ${StyledTheme.media.tablet} {
       width: 80%;
       padding: 12px;
     }
@@ -47,7 +47,7 @@ const Container = styled.section`
       line-height: 32px;
       text-align: center;
       color: #2f354d;
-      @media ${StyledTheme.media.laptop} {
+      @media ${StyledTheme.media.tablet} {
         font-size: 18px;
         line-height: 26px;
       }
@@ -60,7 +60,7 @@ const Container = styled.section`
       line-height: 24px;
       width: 80%;
       margin: 0 auto 16px;
-      @media ${StyledTheme.media.laptop} {
+      @media ${StyledTheme.media.tablet} {
         font-size: 14px;
         line-height: 22px;
       }
@@ -76,13 +76,13 @@ const Container = styled.section`
       gap: 10px;
       flex-shrink: 0;
       width: inherit;
-      @media ${StyledTheme.media.laptop} {
+      @media ${StyledTheme.media.tablet} {
         flex: 0 0 220px;
         margin: 0 0 0;
       }
     }
 
-    @media ${StyledTheme.media.laptop} {
+    @media ${StyledTheme.media.tablet} {
       box-shadow: unset;
       width: unset;
       width: 340px;
@@ -95,7 +95,7 @@ const Container = styled.section`
     margin-bottom: 16px;
     text-align: center;
     line-height: 24px;
-    @media ${StyledTheme.media.laptop} {
+    @media ${StyledTheme.media.tablet} {
       font-size: 14px;
       line-height: 22px;
     }
@@ -132,7 +132,7 @@ const Container = styled.section`
     flex-shrink: 0;
     min-width: 400px;
     margin: 0 auto 24px;
-    @media ${StyledTheme.media.laptop} {
+    @media ${StyledTheme.media.tablet} {
       min-width: 200px;
     }
   }

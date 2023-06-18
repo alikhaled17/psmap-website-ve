@@ -43,7 +43,7 @@ const Container = styled.section`
       line-height: 32px;
       text-align: center;
       color: #2f354d;
-      @media ${StyledTheme.media.laptop} {
+      @media ${StyledTheme.media.tablet} {
         font-size: 18px;
         line-height: 26px;
       }

@@ -14,11 +14,11 @@ export const AboutComparisonStrings: any = {
     title: `ما يميزنا عن الآخرين`,
     table_header: ["المزايا", "PSMap", "الآخرون"],
     table_rows: [
-      ["الدردشة الحية", true, false],
+      ["الدردشة المباشرة", true, false],
       ["السحب والإفلات", true, false],
       ["العصف الذهني عبر الإنترنت", true, false],
       ["التلعيب", true, false],
-      ["مكتب في السعودية", true, false],
+      ["مكتب في المملكة العربية السعودية", true, false],
     ],
   },
 };

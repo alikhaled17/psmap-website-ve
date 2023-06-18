@@ -17,9 +17,8 @@ const HeroSection = () => {
       <div className="warped_container">
         <div className="hero_container">
           <motion.div
-            initial={{ x: -100, opacity: 0 }}
+            initial={{ opacity: 0 }}
             whileInView={{
-              x: 0,
               opacity: 1,
               transition: {
                 delay: 0.1,
@@ -48,18 +47,19 @@ const HeroSection = () => {
                 {t("hero").trial_btn}
                 {locale === "ar" ? <ArrowLeft /> : <ArrowRight />}
               </Link>
-              <Link href="" className="info_section--trial--play_btn">
-                <Play />
-              </Link>
-              <Link href="" className="info_section--trial--watch_btn">
-                {t("hero").watch_btn}
-              </Link>
+              <div className="info_section--watch">
+                <Link href="" className="info_section--watch--play_btn">
+                  <Play />
+                </Link>
+                <Link href="" className="info_section--watch--watch_btn">
+                  {t("hero").watch_btn}
+                </Link>
+              </div>
             </div>
           </motion.div>
           <motion.div
-            initial={{ x: 100, opacity: 0 }}
+            initial={{ opacity: 0 }}
             whileInView={{
-              x: 0,
               opacity: 1,
               transition: {
                 delay: 0.1,

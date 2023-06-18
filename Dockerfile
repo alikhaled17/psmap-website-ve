@@ -13,6 +13,8 @@ RUN npm run build
 FROM node:16.19.1-alpine3.16 AS production
 WORKDIR /app
 ENV NODE_ENV production
+ENV NEXT_TELEMETRY_DISABLED=1
+ENV NO_UPDATE_NOTIFIER=true
 
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
@@ -21,8 +23,15 @@ COPY --from=builder /app/public ./public
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 
-USER nextjs
-EXPOSE 3000
-ENV PORT 3000
+RUN touch .env
+COPY entrypoint.sh /app/entrypoint.sh
+RUN chmod 555 /app/entrypoint.sh
+RUN chmod 666 /app/.env
 
-CMD ["node", "server.js"]
+
+USER nextjs
+EXPOSE 80
+EXPOSE 443
+ENV PORT 80
+
+CMD ["sh", "/app/entrypoint.sh"]

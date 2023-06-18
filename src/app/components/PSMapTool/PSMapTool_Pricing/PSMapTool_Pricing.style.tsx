@@ -4,7 +4,7 @@ import styled from "styled-components";
 const Container = styled.div`
   background-color: #2b2b2b;
   padding: 36px 0;
-  @media ${StyledTheme.media.laptop} {
+  @media ${StyledTheme.media.tablet} {
     padding: 24px 16px;
   }
   .PSMapTool_Pricing {
@@ -23,6 +23,9 @@ const Container = styled.div`
       color: #fff;
       width: 410px;
       @media ${StyledTheme.media.laptop} {
+        font-size: 24px;
+      }
+      @media ${StyledTheme.media.tablet} {
         width: unset;
         font-size: 18px;
         margin-bottom: 24px;

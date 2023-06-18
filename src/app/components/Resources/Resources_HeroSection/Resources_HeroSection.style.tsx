@@ -12,24 +12,24 @@ const Container = styled.div`
     background-size: cover;
     background-position: 0 20%;
     background-repeat: no-repeat;
-    @media ${StyledTheme.media.laptop} {
+    @media ${StyledTheme.media.tablet} {
       padding-top: 0;
       background: url(${ResourcesHeroBgMob.src});
       background-size: 100%;
-      background-position: 0 35%;
+      background-position: 0 20%;
       background-repeat: no-repeat;
     }
   }
   &.en {
     background: url(${ResourcesHeroBgEn.src});
     background-size: cover;
-    background-position: 0 35%;
+    background-position: 0 20%;
     background-repeat: no-repeat;
-    @media ${StyledTheme.media.laptop} {
+    @media ${StyledTheme.media.tablet} {
       padding-top: 0;
       background: url(${ResourcesHeroBgMob.src});
       background-size: 100%;
-      background-position: 0 35%;
+      background-position: 0 20%;
       background-repeat: no-repeat;
     }
   }
@@ -39,6 +39,16 @@ const Container = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media ${StyledTheme.media.laptop} {
+      min-height: unset;
+    }
+
+    &.desktop_screen {
+      @media ${StyledTheme.media.laptop} {
+        padding: 100px 0;
+      }
+    }
 
     .resources_hero_section {
       width: 50%;
@@ -51,6 +61,12 @@ const Container = styled.div`
         padding: 0;
         margin-bottom: 34px;
         line-height: 75px;
+        @media ${StyledTheme.media.laptop} {
+          width: 90%;
+          font-size: 32px;
+          line-height: 44px !important;
+          margin-bottom: 12px;
+        }
       }
       &--desc {
         width: 80%;
@@ -58,6 +74,9 @@ const Container = styled.div`
         color: ${StyledTheme.colors.secondaryFont};
         margin-bottom: 24px;
         width: 600px;
+        @media ${StyledTheme.media.laptop} {
+          width: 100%;
+        }
       }
       &--trial_btn {
         background-color: ${StyledTheme.colors.primary};
@@ -70,7 +89,7 @@ const Container = styled.div`
         flex-shrink: 0;
         min-width: fit-content;
         margin-top: 24px;
-        @media ${StyledTheme.media.laptop} {
+        @media ${StyledTheme.media.tablet} {
           flex: 0 0 220px;
           width: fit-content;
           margin: 0 0 24px;
@@ -93,7 +112,7 @@ const Container = styled.div`
   .mobile_screen {
     display: none;
   }
-  @media ${StyledTheme.media.laptop} {
+  @media ${StyledTheme.media.tablet} {
     .resources_hero_container {
       min-height: unset;
       padding-top: 100px;
@@ -118,7 +137,7 @@ const Container = styled.div`
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        min-height: 200px;
+        min-height: 30vh;
         &--title {
           width: unset;
           min-width: unset;

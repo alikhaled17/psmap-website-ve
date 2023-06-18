@@ -8,9 +8,13 @@ const Container = styled.div`
     align-items: flex-start;
     padding: 80px 0;
     @media ${StyledTheme.media.laptop} {
+      gap: 26px;
+    }
+    @media ${StyledTheme.media.laptop} {
       padding: 48px 0 24px;
       flex-direction: column;
       gap: 16px;
+      align-items: center;
     }
     &--content {
       width: 50%;
@@ -30,14 +34,14 @@ const Container = styled.div`
         flex-shrink: 0;
         min-width: fit-content;
         margin-top: 40px;
-        @media ${StyledTheme.media.laptop} {
+        @media ${StyledTheme.media.tablet} {
           margin: 24px auto;
         }
       }
     }
 
     &--image {
-      @media ${StyledTheme.media.laptop} {
+      @media ${StyledTheme.media.tablet} {
         width: 100%;
       }
     }
@@ -47,7 +51,7 @@ const Container = styled.div`
       display: flex;
       flex-direction: column;
       gap: 24px;
-      @media ${StyledTheme.media.laptop} {
+      @media ${StyledTheme.media.tablet} {
         gap: 16px;
       }
       &--item {
@@ -63,6 +67,9 @@ const Container = styled.div`
           font-size: 18px;
           margin-bottom: 16px;
           @media ${StyledTheme.media.laptop} {
+            margin-bottom: 10px;
+          }
+          @media ${StyledTheme.media.tablet} {
             margin-bottom: 8px;
           }
         }

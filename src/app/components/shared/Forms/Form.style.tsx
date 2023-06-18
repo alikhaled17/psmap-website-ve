@@ -15,6 +15,9 @@ const Container = styled.div`
     width: 30vw;
 
     @media ${StyledTheme.media.laptop} {
+      width: 50vw;
+    }
+    @media ${StyledTheme.media.tablet} {
       box-shadow: unset;
       width: unset;
     }
@@ -26,7 +29,7 @@ const Container = styled.div`
     margin-bottom: 16px;
     text-align: center;
     line-height: 24px;
-    @media ${StyledTheme.media.laptop} {
+    @media ${StyledTheme.media.tablet} {
       font-size: 14px;
       line-height: 22px;
     }
@@ -66,7 +69,7 @@ const Container = styled.div`
     flex-shrink: 0;
     min-width: 400px;
     margin: 0 auto 24px;
-    @media ${StyledTheme.media.laptop} {
+    @media ${StyledTheme.media.tablet} {
       min-width: 200px;
     }
   }

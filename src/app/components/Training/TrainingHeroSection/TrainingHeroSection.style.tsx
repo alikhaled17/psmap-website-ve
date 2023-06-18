@@ -7,7 +7,7 @@ const Container = styled.div`
   padding-top: 180px;
   padding-bottom: 40px;
 
-  @media ${StyledTheme.media.laptop} {
+  @media ${StyledTheme.media.tablet} {
     padding-top: 0;
     background: unset;
   }
@@ -16,7 +16,7 @@ const Container = styled.div`
     justify-content: space-between;
     align-items: center;
     gap: 125px;
-    @media ${StyledTheme.media.laptop} {
+    @media ${StyledTheme.media.tablet} {
       min-height: unset;
       flex-direction: column;
     }
@@ -24,6 +24,10 @@ const Container = styled.div`
     .info_section {
       width: 50%;
       @media ${StyledTheme.media.laptop} {
+        width: 40%;
+        height: auto;
+      }
+      @media ${StyledTheme.media.tablet} {
         width: 100%;
         text-align: center;
         padding-top: 100px;
@@ -35,6 +39,9 @@ const Container = styled.div`
         padding: 0;
         margin-bottom: 24px;
         @media ${StyledTheme.media.laptop} {
+          font-size: 32px;
+        }
+        @media ${StyledTheme.media.tablet} {
           font-size: 24px;
           line-height: 32px !important;
           max-width: 343px;
@@ -45,10 +52,13 @@ const Container = styled.div`
         font-size: 16px;
         color: ${StyledTheme.colors.secondaryFont};
         margin-bottom: 48px;
-        width: 600px;
+        width: 500px;
         @media ${StyledTheme.media.laptop} {
+          width: 100%;
+        }
+        @media ${StyledTheme.media.tablet} {
           font-size: 14px;
-          max-width: 343px;
+          max-width: 90%;
           width: unset;
           margin: 0 auto;
         }
@@ -57,7 +67,7 @@ const Container = styled.div`
         display: flex;
         align-items: center;
         gap: 20px;
-        @media ${StyledTheme.media.laptop} {
+        @media ${StyledTheme.media.tablet} {
           justify-content: center;
           flex-wrap: wrap;
           gap: 10px;
@@ -72,7 +82,7 @@ const Container = styled.div`
           gap: 10px;
           flex-shrink: 0;
           min-width: fit-content;
-          @media ${StyledTheme.media.laptop} {
+          @media ${StyledTheme.media.tablet} {
             width: unset;
             margin: 32px 130px 0;
           }
@@ -98,6 +108,7 @@ const Container = styled.div`
       display: flex;
       justify-content: flex-end;
       position: relative;
+
       .En_item {
         top: 47%;
         left: -170px;
@@ -112,11 +123,14 @@ const Container = styled.div`
         height: auto;
         z-index: -1;
       }
-      @media ${StyledTheme.media.laptop} {
+      @media ${StyledTheme.media.tablet} {
         display: none;
       }
       .main_img {
         border-radius: 8px;
+        @media ${StyledTheme.media.laptop} {
+          height: auto;
+        }
       }
     }
   }

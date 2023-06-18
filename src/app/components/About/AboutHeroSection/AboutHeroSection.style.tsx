@@ -9,7 +9,7 @@ const Container = styled.div`
   background-size: cover;
   background-position: 50% 10%;
   background-repeat: no-repeat;
-  @media ${StyledTheme.media.laptop} {
+  @media ${StyledTheme.media.tablet} {
     background: url(${HeroBgMobile.src});
     background-size: cover;
     background-position: 50% 50px;
@@ -24,7 +24,7 @@ const Container = styled.div`
     flex-direction: column;
     color: #fff;
     padding-top: 20px;
-    @media ${StyledTheme.media.laptop} {
+    @media ${StyledTheme.media.tablet} {
       padding-top: unset;
       height: 50vh;
       align-items: center;
@@ -41,6 +41,9 @@ const Container = styled.div`
       max-width: 550px;
       line-height: 48px;
       @media ${StyledTheme.media.laptop} {
+        font-size: 32px;
+      }
+      @media ${StyledTheme.media.tablet} {
         font-size: 24px;
         line-height: 32px !important;
         max-width: 343px;
@@ -53,7 +56,7 @@ const Container = styled.div`
       margin-bottom: 48px;
       max-width: 550px;
       color: #d5d7d9;
-      @media ${StyledTheme.media.laptop} {
+      @media ${StyledTheme.media.tablet} {
         font-size: 14px;
         max-width: 343px;
         width: unset;

@@ -11,11 +11,15 @@ const Container = styled.div`
   padding-bottom: 60px;
   padding-top: 40px;
   @media ${StyledTheme.media.laptop} {
+    min-height: unset;
+  }
+  @media ${StyledTheme.media.tablet} {
     padding-top: 16px;
     min-height: unset;
     padding-bottom: 12px;
   }
   .what_rca {
+    width: 100%;
     &--title {
       font-size: 32px;
       font-weight: bold;
@@ -24,6 +28,10 @@ const Container = styled.div`
       margin-bottom: 32px;
       text-align: center;
       @media ${StyledTheme.media.laptop} {
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+      @media ${StyledTheme.media.tablet} {
         font-size: 18px;
         margin-bottom: 20px;
       }
@@ -32,18 +40,17 @@ const Container = styled.div`
       background: url(${VideoPlayerBg.src});
       background-repeat: no-repeat;
       background-size: cover;
-
-      width: 85vw;
+      width: 90%;
       height: 650px;
-      padding: 24px 86px;
+      padding: 24px 5%;
       background-color: red;
       display: flex;
       align-items: center;
       justify-content: center;
-      @media ${StyledTheme.media.laptop} {
+      @media ${StyledTheme.media.tablet} {
         height: 300px;
-        width: 90vw;
-        padding: 24px 16px;
+        width: 90%;
+        padding: 24px 5%;
       }
       .youtube {
         width: 100%;
@@ -51,7 +58,7 @@ const Container = styled.div`
         border: 0;
         box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
         border-radius: 8px;
-        @media ${StyledTheme.media.laptop} {
+        @media ${StyledTheme.media.tablet} {
           width: 90%;
         }
       }

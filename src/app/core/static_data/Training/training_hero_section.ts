@@ -2,7 +2,7 @@ export const TrainingHeroStrings: any = {
   en: {
     title: `Learn Root Cause Analysis from the Experts`,
     desc: `Master the art of problem-solving and propel your career forward – whether you’re an individual or an organization.`,
-    trial_btn: "Start Your RCA Training",
+    trial_btn: "Start Your RCA Training Today",
   },
   ar: {
     title: `تعلَّم تحليل السبب الجذري من الخبراء`,

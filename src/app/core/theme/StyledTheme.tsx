@@ -14,7 +14,7 @@ export const StyledTheme = {
 
   media: {
     laptop_large: "only screen and (max-width : 1440px)",
-    laptop: "only screen and (max-width : 1024px)",
+    laptop: "only screen and (max-width : 1360px)",
     tablet: "only screen and (max-width : 768px)",
     mobile_large: "only screen and (max-width : 425px)",
     mobile_medium: "only screen and (max-width : 375px)",

@@ -4,7 +4,7 @@ import PSMapToolHeroSectionImg from "@/app/assets/images/PSMapTool/PSMapTool_Her
 
 const Container = styled.div`
   padding-top: 150px;
-  @media ${StyledTheme.media.laptop} {
+  @media ${StyledTheme.media.tablet} {
     padding-top: 100px;
   }
   .PSMapTool_HeroSection {
@@ -22,6 +22,10 @@ const Container = styled.div`
       line-height: 40px;
       width: 754px;
       @media ${StyledTheme.media.laptop} {
+        line-height: 32px;
+        font-size: 24px;
+      }
+      @media ${StyledTheme.media.tablet} {
         font-size: 24px;
         line-height: 32px;
         width: unset;
@@ -33,6 +37,9 @@ const Container = styled.div`
       margin-bottom: 16px;
       text-align: center;
       @media ${StyledTheme.media.laptop} {
+        line-height: 19px;
+      }
+      @media ${StyledTheme.media.tablet} {
         font-size: 14px;
         line-height: 19px;
       }
@@ -47,7 +54,7 @@ const Container = styled.div`
       gap: 10px;
       width: fit-content;
       margin-top: 24px;
-      @media ${StyledTheme.media.laptop} {
+      @media ${StyledTheme.media.tablet} {
         margin-bottom: 24px;
         margin-top: 8px;
       }
@@ -62,6 +69,9 @@ const Container = styled.div`
     background-position: top;
     background-repeat: no-repeat;
     @media ${StyledTheme.media.laptop} {
+      min-height: 350px;
+    }
+    @media ${StyledTheme.media.tablet} {
       display: none;
     }
   }

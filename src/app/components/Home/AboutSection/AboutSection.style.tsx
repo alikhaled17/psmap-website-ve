@@ -7,6 +7,12 @@ const Container = styled.div`
     justify-content: space-between;
     align-items: flex-start;
     @media ${StyledTheme.media.laptop} {
+      gap: 26px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    @media ${StyledTheme.media.tablet} {
       padding-top: 24px;
       flex-direction: column;
       gap: 16px;
@@ -14,6 +20,11 @@ const Container = styled.div`
     &--content {
       width: 50%;
       @media ${StyledTheme.media.laptop} {
+        width: unset;
+        order: 2;
+        padding: 0 10px;
+      }
+      @media ${StyledTheme.media.tablet} {
         width: unset;
         order: 2;
         padding: 0 10px;
@@ -30,13 +41,16 @@ const Container = styled.div`
         min-width: fit-content;
         margin-top: 40px;
         @media ${StyledTheme.media.laptop} {
+          margin: 20px auto;
+        }
+        @media ${StyledTheme.media.tablet} {
           margin: 24px auto;
         }
       }
     }
 
     &--image {
-      @media ${StyledTheme.media.laptop} {
+      @media ${StyledTheme.media.tablet} {
         width: 100%;
       }
     }
@@ -46,7 +60,7 @@ const Container = styled.div`
       display: flex;
       flex-direction: column;
       gap: 24px;
-      @media ${StyledTheme.media.laptop} {
+      @media ${StyledTheme.media.tablet} {
         gap: 16px;
       }
       &--item {
@@ -62,6 +76,10 @@ const Container = styled.div`
           font-size: 18px;
           margin-bottom: 16px;
           @media ${StyledTheme.media.laptop} {
+            font-size: 16px;
+            margin-bottom: 12px;
+          }
+          @media ${StyledTheme.media.tablet} {
             margin-bottom: 8px;
           }
         }

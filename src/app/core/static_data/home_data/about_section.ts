@@ -20,7 +20,7 @@ export const AboutStrings: any = {
         desc: "Rom gamifying the experience, to live brainstorming sessions, to our easy drag-and-drop interface, our RCA tool helps you solve problems quickly and efficiently, drive sustainable growth for your business, and uncover hidden insights and opportunities.",
       },
     ],
-    btn: "Start RCA Training",
+    btn: "Start Your RCA Training Today",
   },
   ar: {
     list: [

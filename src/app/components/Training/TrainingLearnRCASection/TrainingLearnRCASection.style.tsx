@@ -8,7 +8,7 @@ const Container = styled.div`
   padding-bottom: 32px;
   background-color: #e7e7e7;
 
-  @media ${StyledTheme.media.laptop} {
+  @media ${StyledTheme.media.tablet} {
     padding-bottom: 0;
     background: unset;
   }
@@ -18,6 +18,9 @@ const Container = styled.div`
     align-items: center;
     gap: 125px;
     @media ${StyledTheme.media.laptop} {
+      gap: 50px;
+    }
+    @media ${StyledTheme.media.tablet} {
       gap: unset;
       min-height: unset;
       flex-direction: column;
@@ -25,11 +28,11 @@ const Container = styled.div`
 
     .info_section {
       width: 50%;
-      @media ${StyledTheme.media.laptop} {
+      @media ${StyledTheme.media.tablet} {
         width: 100%;
         text-align: center;
         padding-top: 100px;
-        @media ${StyledTheme.media.laptop} {
+        @media ${StyledTheme.media.tablet} {
           padding-top: 0;
         }
       }
@@ -41,6 +44,9 @@ const Container = styled.div`
         margin-bottom: 16px;
         @media ${StyledTheme.media.laptop} {
           font-size: 24px;
+        }
+        @media ${StyledTheme.media.tablet} {
+          font-size: 24px;
           line-height: 32px !important;
           max-width: 343px;
           margin: 0 auto 24px;
@@ -50,10 +56,13 @@ const Container = styled.div`
         font-size: 16px;
         color: ${StyledTheme.colors.secondaryFont};
         margin-bottom: 48px;
-        width: 600px;
+        width: 100%;
         @media ${StyledTheme.media.laptop} {
+          width: 90%;
+        }
+        @media ${StyledTheme.media.tablet} {
           font-size: 14px;
-          max-width: 343px;
+          width: 90%;
           width: unset;
           margin: 0 auto;
           margin-bottom: unset;
@@ -65,14 +74,14 @@ const Container = styled.div`
       width: 50%;
       display: flex;
       justify-content: flex-start;
-      @media ${StyledTheme.media.laptop} {
+      @media ${StyledTheme.media.tablet} {
         width: 100%;
         margin-bottom: 24px;
       }
       img {
         border-radius: 8px;
         height: 100%;
-        @media ${StyledTheme.media.laptop} {
+        @media ${StyledTheme.media.tablet} {
           height: unset;
           width: 100%;
         }

@@ -39,10 +39,10 @@ export const FooterStrings: any = {
   },
   ar: {
     about_psmap:
-      "PSmap هي أداة حل المشكلات التعاونية المتطورة التي تربط الإدارات لتحسين التعاون والكفاءة.",
+      "أداة PSmap إحدى أحدث الأدوات التعاوُنية لحل المشكلات، وتمتاز بربطها بين الأقسام المختلفة لتحسين التعاوُن والفاعلية.",
     follow_us: "تابعنا على ..",
-    links_label: "شركة",
-    contacts_label: "اتصل بـ PSMap",
+    links_label: "PSMap",
+    contacts_label: "تواصل مع PSMap",
     items: [
       {
         text: "الرئيسية",
@@ -57,7 +57,7 @@ export const FooterStrings: any = {
         route: "/Training",
       },
       {
-        text: "عنا",
+        text: "نبذة عنا",
         route: "/About",
       },
       {
@@ -69,7 +69,7 @@ export const FooterStrings: any = {
         route: "/Contact",
       },
       {
-        text: "مجتمعنا",
+        text: "انضم إالى المجتمع",
         route: "/Community",
       },
     ],

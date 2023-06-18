@@ -24,6 +24,7 @@ const ContactHeroSection = () => {
               },
             }}
             className="contact_hero_section"
+            style={{ alignItems: locale === "en" ? "flex-start" : "flex-end" }}
           >
             <p className="title">{t("contact_hero").title}</p>
             <p className="description">{t("contact_hero").desc}</p>

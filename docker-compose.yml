@@ -1,0 +1,22 @@
+version: '3.4'
+services:
+  website_backend:
+    image: website_backend
+    container_name: website_backend
+    environment:
+      - ConnectionStrings__PostgresSQL=Host=192.168.1.200;Port=5432;Database=psmap-website;Username=psmap-website;Password=psmapWebsiteP@ssw0rd@123;
+    ports:
+      - 8081:80
+    volumes:
+      - /var/lib/docker/volumes/psmap-postgres-volume/_data
+  
+  website_frontend:
+    image: website_frontend
+    container_name: website_frontend
+    build:
+      context: ../psmap-portal
+      dockerfile: ../psmap-portal/Dockerfile
+    environment:
+      - BACKEND_URL=http://host.docker.internal:8081/
+    ports:
+      - 5000:3000

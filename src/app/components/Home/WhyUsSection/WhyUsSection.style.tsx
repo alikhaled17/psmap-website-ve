@@ -9,6 +9,9 @@ const Container = styled.div`
     justify-content: center;
     @media ${StyledTheme.media.laptop} {
       min-height: unset;
+    }
+    @media ${StyledTheme.media.tablet} {
+      min-height: unset;
       padding-bottom: 24px;
     }
     &--title {
@@ -19,6 +22,9 @@ const Container = styled.div`
       margin-bottom: 16px;
       text-align: center;
       @media ${StyledTheme.media.laptop} {
+        font-size: 24px;
+      }
+      @media ${StyledTheme.media.tablet} {
         font-size: 18px;
       }
     }
@@ -28,7 +34,7 @@ const Container = styled.div`
       padding: 0;
       margin-bottom: 24px;
       text-align: center;
-      @media ${StyledTheme.media.laptop} {
+      @media ${StyledTheme.media.tablet} {
         width: 92%;
         margin: 0 auto 16px;
       }
@@ -41,6 +47,10 @@ const Container = styled.div`
       margin-bottom: 40px;
       gap: 220px;
       @media ${StyledTheme.media.laptop} {
+        gap: 30px;
+        margin-bottom: 20px;
+      }
+      @media ${StyledTheme.media.tablet} {
         gap: unset;
         flex-direction: column;
         justify-content: center;
@@ -48,7 +58,7 @@ const Container = styled.div`
       }
       &--col {
         width: 50%;
-        @media ${StyledTheme.media.laptop} {
+        @media ${StyledTheme.media.tablet} {
           width: 100%;
         }
         ul {
@@ -58,7 +68,7 @@ const Container = styled.div`
             align-items: center;
             margin: 32px 15px;
             font-size: 16px;
-            @media ${StyledTheme.media.laptop} {
+            @media ${StyledTheme.media.tablet} {
               margin: 24px 0;
               &:last-child {
                 margin: 24px 0 0;

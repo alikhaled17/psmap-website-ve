@@ -2,7 +2,7 @@ export const TrainingRCACertifiedStrings: any = {
   en: {
     title: `Become RCA Certified Today`,
     desc: `Our RCA training programs are designed to prepare you for certification, which is a widely recognized credential in the field of problem-solving and decision-making.<br />Simply fill in your details below and we’ll send you more information about our program, including schedules, pricing, and certification options. `,
-    btn: `Start Your RCA Training`,
+    btn: `Start Your RCA Training Today`,
   },
   ar: {
     title: `كُن ممارسًا معتمدًا لتحليل السبب الجذري اليوم`,

@@ -7,7 +7,7 @@ const Container = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   padding-top: 80px;
-  @media ${StyledTheme.media.laptop} {
+  @media ${StyledTheme.media.tablet} {
     padding-top: 0;
     background: unset;
   }
@@ -18,12 +18,15 @@ const Container = styled.div`
     align-items: center;
     @media ${StyledTheme.media.laptop} {
       min-height: unset;
+    }
+    @media ${StyledTheme.media.tablet} {
+      min-height: unset;
       flex-direction: column;
     }
 
     .info_section {
       width: 50%;
-      @media ${StyledTheme.media.laptop} {
+      @media ${StyledTheme.media.tablet} {
         width: 100%;
         text-align: center;
         padding-top: 100px;
@@ -35,6 +38,10 @@ const Container = styled.div`
         padding: 0;
         margin-bottom: 24px;
         @media ${StyledTheme.media.laptop} {
+          font-size: 32px;
+          margin: 0 auto 16px;
+        }
+        @media ${StyledTheme.media.tablet} {
           font-size: 24px;
           line-height: 32px !important;
           margin: 0 auto 24px;
@@ -44,8 +51,11 @@ const Container = styled.div`
         font-size: 16px;
         color: ${StyledTheme.colors.secondaryFont};
         margin-bottom: 48px;
-        width: 600px;
+        width: 500px;
         @media ${StyledTheme.media.laptop} {
+          margin-bottom: 32px;
+        }
+        @media ${StyledTheme.media.tablet} {
           font-size: 14px;
           width: unset;
           margin: 0 auto;
@@ -55,7 +65,7 @@ const Container = styled.div`
         display: flex;
         align-items: center;
         gap: 20px;
-        @media ${StyledTheme.media.laptop} {
+        @media ${StyledTheme.media.tablet} {
           justify-content: center;
           flex-wrap: wrap;
           gap: 10px;
@@ -70,7 +80,7 @@ const Container = styled.div`
           gap: 10px;
           flex-shrink: 0;
           min-width: fit-content;
-          @media ${StyledTheme.media.laptop} {
+          @media ${StyledTheme.media.tablet} {
             flex: 0 0 220px;
             width: fit-content;
             margin: 32px 130px 0;
@@ -81,7 +91,7 @@ const Container = styled.div`
 
     .communityhero_img {
       width: 50%;
-      @media ${StyledTheme.media.laptop} {
+      @media ${StyledTheme.media.tablet} {
         display: none;
       }
       img {
@@ -97,7 +107,7 @@ const Container = styled.div`
     justify-content: center;
     text-align: center;
     padding: 40px;
-    @media ${StyledTheme.media.laptop} {
+    @media ${StyledTheme.media.tablet} {
       padding: 40px 0;
     }
     &--title {
@@ -108,6 +118,10 @@ const Container = styled.div`
       margin-bottom: 24px;
       @media ${StyledTheme.media.laptop} {
         font-size: 24px;
+        margin: 0 auto 24px;
+      }
+      @media ${StyledTheme.media.tablet} {
+        font-size: 24px;
         line-height: 32px !important;
         margin: 0 auto 24px;
       }
@@ -115,7 +129,7 @@ const Container = styled.div`
     &--desc {
       font-size: 16px;
       color: ${StyledTheme.colors.secondaryFont};
-      @media ${StyledTheme.media.laptop} {
+      @media ${StyledTheme.media.tablet} {
         font-size: 14px;
         width: unset;
         margin: 0 auto;

@@ -8,6 +8,9 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   @media ${StyledTheme.media.laptop} {
+    min-height: unset;
+  }
+  @media ${StyledTheme.media.tablet} {
     .warped_container {
       margin: 0 0;
     }

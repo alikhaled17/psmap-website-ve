@@ -20,8 +20,9 @@ export const PsmapToolHowItWorksStrings: any = {
       },
       {
         title: "Implement solutions & Monitor progress",
-        desc: `PSMap helps you streamline the investigation process by allowing you to systematically hypothesize and brainstorm potential causes until you reach the root of the problem.
-        Explore and evaluate all possible causes, quickly getting to the bottom of the problem.`,
+        desc: `PSMap helps you implement effective solutions and track progress over time.
+        You can set a target date and measure the team’s performance to ensure continuous improvement and prevent the recurrence of incidents.
+        `,
         img: how_2,
       },
       {

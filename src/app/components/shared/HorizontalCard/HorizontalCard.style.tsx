@@ -5,7 +5,7 @@ const Container = styled.div`
   padding: 0;
   margin: 0;
   margin-bottom: 48px;
-  @media ${StyledTheme.media.laptop} {
+  @media ${StyledTheme.media.tablet} {
     margin-bottom: 16px;
   }
   .horizontal_card {
@@ -20,7 +20,7 @@ const Container = styled.div`
     margin: 0;
     padding: 0;
 
-    @media ${StyledTheme.media.laptop} {
+    @media ${StyledTheme.media.tablet} {
       flex-direction: column;
       align-items: center;
       box-shadow: unset;
@@ -30,14 +30,19 @@ const Container = styled.div`
     &--img {
       margin: 0;
       padding: 0;
+      overflow: hidden;
       @media ${StyledTheme.media.laptop} {
+        width: 65%;
+      }
+      @media ${StyledTheme.media.tablet} {
+        width: unset;
         margin: 16px 16px 0;
       }
       img {
-        scale: 1.04;
-        @media ${StyledTheme.media.laptop} {
+        scale: 1.07;
+        width: 100%;
+        @media ${StyledTheme.media.tablet} {
           scale: unset;
-          width: 100%;
           border-radius: 8px;
         }
       }
@@ -46,7 +51,7 @@ const Container = styled.div`
       padding: 32px 42px 0;
       text-align: left;
       flex-grow: 1;
-      @media ${StyledTheme.media.laptop} {
+      @media ${StyledTheme.media.tablet} {
         padding: 0 0 24px;
         text-align: center;
       }
@@ -55,6 +60,11 @@ const Container = styled.div`
         font-weight: bold;
         margin-bottom: 16px;
         @media ${StyledTheme.media.laptop} {
+          margin-bottom: 0;
+          font-size: 20px;
+        }
+        @media ${StyledTheme.media.tablet} {
+          margin-bottom: 16px;
           font-size: 18px;
         }
       }
@@ -65,7 +75,7 @@ const Container = styled.div`
       &--btn {
         display: flex;
         width: 100%;
-        @media ${StyledTheme.media.laptop} {
+        @media ${StyledTheme.media.tablet} {
           justify-content: center !important;
         }
         .button {
@@ -78,7 +88,7 @@ const Container = styled.div`
           gap: 10px;
           min-width: fit-content;
           margin: 24px 0 0;
-          @media ${StyledTheme.media.laptop} {
+          @media ${StyledTheme.media.tablet} {
             flex: 0 0 220px;
             width: fit-content;
             margin: 24px 0 0;

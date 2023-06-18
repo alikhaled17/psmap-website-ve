@@ -23,9 +23,8 @@ const CommunityHeroSection = () => {
       <div className="warped_container">
         <div className="communityhero_container">
           <motion.div
-            initial={{ x: -100, opacity: 0 }}
+            initial={{ opacity: 0 }}
             whileInView={{
-              x: 0,
               opacity: 1,
               transition: {
                 delay: 0.1,
@@ -61,9 +60,8 @@ const CommunityHeroSection = () => {
             </div>
           </motion.div>
           <motion.div
-            initial={{ x: 100, opacity: 0 }}
+            initial={{ opacity: 0 }}
             whileInView={{
-              x: 0,
               opacity: 1,
               transition: {
                 delay: 0.1,

@@ -8,7 +8,7 @@ const Container = styled.div`
   background-size: contain;
   background-position: 50% 10%;
   background-repeat: no-repeat;
-  @media ${StyledTheme.media.laptop} {
+  @media ${StyledTheme.media.tablet} {
     background: url(${HeroBgMobile.src});
     background-size: contain;
     background-position: 50% 50px;
@@ -19,11 +19,10 @@ const Container = styled.div`
     height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
     flex-direction: column;
     color: #fff;
     padding-top: 20px;
-    @media ${StyledTheme.media.laptop} {
+    @media ${StyledTheme.media.tablet} {
       height: 30vh;
       align-items: center;
       padding-top: 45px;

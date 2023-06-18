@@ -3,13 +3,14 @@ import styled from "styled-components";
 import HeroBg from "@/app/assets/images/Home/HeroSectionBg.svg";
 
 const Container = styled.div`
+  width: auto;
   background: url(${HeroBg.src});
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   padding-top: 80px;
   padding-bottom: 32px;
-  @media ${StyledTheme.media.laptop} {
+  @media ${StyledTheme.media.tablet} {
     padding-top: 0;
     background: unset;
   }
@@ -20,12 +21,15 @@ const Container = styled.div`
     align-items: center;
     @media ${StyledTheme.media.laptop} {
       min-height: unset;
+    }
+    @media ${StyledTheme.media.tablet} {
+      min-height: unset;
       flex-direction: column;
     }
 
     .info_section {
       width: 50%;
-      @media ${StyledTheme.media.laptop} {
+      @media ${StyledTheme.media.tablet} {
         width: 100%;
         text-align: center;
         padding-top: 100px;
@@ -37,6 +41,10 @@ const Container = styled.div`
         padding: 0;
         margin-bottom: 24px;
         @media ${StyledTheme.media.laptop} {
+          font-size: 32px;
+          line-height: 40px !important;
+        }
+        @media ${StyledTheme.media.tablet} {
           font-size: 24px;
           line-height: 32px !important;
           max-width: 343px;
@@ -47,8 +55,11 @@ const Container = styled.div`
         font-size: 16px;
         color: ${StyledTheme.colors.secondaryFont};
         margin-bottom: 48px;
-        width: 600px;
         @media ${StyledTheme.media.laptop} {
+          width: 400px;
+          margin-bottom: 24px;
+        }
+        @media ${StyledTheme.media.tablet} {
           font-size: 14px;
           max-width: 343px;
           width: unset;
@@ -60,8 +71,14 @@ const Container = styled.div`
         align-items: center;
         gap: 20px;
         @media ${StyledTheme.media.laptop} {
+          gap: 15px;
+          flex-wrap: wrap;
+        }
+        @media ${StyledTheme.media.tablet} {
           justify-content: center;
           flex-wrap: wrap;
+          flex-direction: column;
+
           gap: 10px;
         }
         &--trial_btn {
@@ -74,12 +91,17 @@ const Container = styled.div`
           gap: 10px;
           flex-shrink: 0;
           min-width: fit-content;
-          @media ${StyledTheme.media.laptop} {
-            flex: 0 0 220px;
+          @media ${StyledTheme.media.tablet} {
+            /* flex: 0 0 220px; */
             width: fit-content;
-            margin: 32px 130px 0;
+            margin: 32px auto 0;
           }
         }
+      }
+      &--watch {
+        display: flex;
+        align-items: center;
+        gap: 8px;
         &--play_btn {
           width: 45px;
           height: 45px;
@@ -92,17 +114,23 @@ const Container = styled.div`
         }
         &--watch_btn {
           font-size: 20px;
+          @media ${StyledTheme.media.laptop} {
+            font-size: 18px;
+          }
         }
       }
     }
 
     .hero_img {
       width: 50%;
-      @media ${StyledTheme.media.laptop} {
+      @media ${StyledTheme.media.tablet} {
         display: none;
       }
       img {
         width: 100%;
+        @media ${StyledTheme.media.laptop} {
+          width: 90%;
+        }
       }
     }
   }
